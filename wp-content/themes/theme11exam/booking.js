@@ -1,5 +1,5 @@
 // script.js
-
+// calendar view from geeksforgeeks.com: https://www.geeksforgeeks.org/how-to-create-a-dynamic-calendar-in-html-css-javascript/
 // Define an array to store events
 let events = [];
 
@@ -13,28 +13,28 @@ let reminderList = document.getElementById("reminderList");
 let eventIdCounter = 1;
 
 // Function to add events
-function addEvent() {
-  let date = eventDateInput.value;
-  let title = eventTitleInput.value;
-  let description = eventDescriptionInput.value;
+// function addEvent() {
+//   let date = eventDateInput.value;
+//   let title = eventTitleInput.value;
+//   let description = eventDescriptionInput.value;
 
-  if (date && title) {
-    // Create a unique event ID
-    let eventId = eventIdCounter++;
+//   if (date && title) {
+//     // Create a unique event ID
+//     let eventId = eventIdCounter++;
 
-    events.push({
-      id: eventId,
-      date: date,
-      title: title,
-      description: description,
-    });
-    showCalendar(currentMonth, currentYear);
-    eventDateInput.value = "";
-    eventTitleInput.value = "";
-    eventDescriptionInput.value = "";
-    displayReminders();
-  }
-}
+//     events.push({
+//       id: eventId,
+//       date: date,
+//       title: title,
+//       description: description,
+//     });
+//     showCalendar(currentMonth, currentYear);
+//     eventDateInput.value = "";
+//     eventTitleInput.value = "";
+//     eventDescriptionInput.value = "";
+//     displayReminders();
+//   }
+// }
 
 // Function to delete an event by ID
 // function deleteEvent(eventId) {
@@ -101,21 +101,8 @@ document.getElementById("year").innerHTML = createYear;
 
 let calendar = document.getElementById("calendar");
 
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let months = ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
+let days = ["Man", "Tir", "Ons", "Tor", "Fre", "Lør", "Søn"];
 
 $dataHead = "<tr>";
 for (dhead in days) {
@@ -176,13 +163,9 @@ function showCalendar(month, year) {
         cell.setAttribute("data-year", year);
         cell.setAttribute("data-month_name", months[month]);
         cell.className = "date-picker";
-        cell.innerHTML = "<span>" + date + "</span";
+        cell.innerHTML = "<span class='circle'>" + date + "</span";
 
-        if (
-          date === today.getDate() &&
-          year === today.getFullYear() &&
-          month === today.getMonth()
-        ) {
+        if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
           cell.className = "date-picker selected";
         }
 
@@ -224,11 +207,7 @@ function createEventTooltip(date, month, year) {
 function getEventsOnDate(date, month, year) {
   return events.filter(function (event) {
     let eventDate = new Date(event.date);
-    return (
-      eventDate.getDate() === date &&
-      eventDate.getMonth() === month &&
-      eventDate.getFullYear() === year
-    );
+    return eventDate.getDate() === date && eventDate.getMonth() === month && eventDate.getFullYear() === year;
   });
 }
 

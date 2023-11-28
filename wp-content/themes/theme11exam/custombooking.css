@@ -196,14 +196,14 @@ body {
 }
 
 /* Day-specific styling */
-.date-picker:nth-child(1) {
+.date-picker:nth-child(6) {
   color: red;
-  /* Sunday */
+  /* Lørdag */
 }
 
-.date-picker:nth-child(6) {
+.date-picker:nth-child(7) {
   color: green;
-  /* Friday */
+  /* Søndag */
 }
 
 /* Hover effect for date cells */
@@ -214,6 +214,11 @@ body {
 #monthAndYear {
   text-align: center;
   margin-top: 0;
+}
+
+#thead-month {
+  border-block: 1px solid var(--cta-color);
+  margin-bottom: 12px;
 }
 
 /* Navigation buttons */
@@ -251,21 +256,21 @@ body {
 /* circle border */
 td {
   padding: 5px;
-  border: solid 1px #ccc;
+
   text-align: center;
 }
 
 .circle {
-  background-color: blue;
   display: block;
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: 5px solid #000;
+  /* border: 1px solid var(--cta-color); */
   margin: auto;
-  color: #fff;
   line-height: 50px;
   text-align: center;
+  background: var(--cta-color);
+  color: #fff;
 }
 
 @media (min-width: 500px) {
