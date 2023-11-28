@@ -186,24 +186,14 @@ body {
 
 /* Date picker */
 .date-picker.selected {
-  background-color: #f2f2f2;
   font-weight: bold;
-  outline: 1px dashed #00bcd4;
 }
 
 .date-picker.selected span {
-  border-bottom: 2px solid currentColor;
-}
-
-/* Day-specific styling */
-.date-picker:nth-child(6) {
-  color: red;
-  /* Lørdag */
-}
-
-.date-picker:nth-child(7) {
-  color: green;
-  /* Søndag */
+  border: 1px solid var(--cta-color);
+  background-color: transparent;
+  color: var(--cta-color);
+  font-size: 20px;
 }
 
 /* Hover effect for date cells */
@@ -270,7 +260,18 @@ td {
   line-height: 50px;
   text-align: center;
   background: var(--cta-color);
-  color: #fff;
+  color: white;
+}
+
+/* Day-specific styling */
+.circle:nth-child(6) {
+  color: red;
+  /* Lørdag */
+}
+
+.date-picker:nth-child(7) {
+  color: green;
+  /* Søndag */
 }
 
 @media (min-width: 500px) {

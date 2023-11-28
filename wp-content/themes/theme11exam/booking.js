@@ -163,14 +163,14 @@ function showCalendar(month, year) {
         cell.setAttribute("data-year", year);
         cell.setAttribute("data-month_name", months[month]);
         cell.className = "date-picker";
-        cell.innerHTML = "<span class='circle'>" + date + "</span";
+        cell.innerHTML = "<span class='circle' style='background-color: " + (days[j] === "Lør" || days[j] === "Søn" ? "darkgray" : "") + "'>" + date + "</span>";
 
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
           cell.className = "date-picker selected";
         }
 
-        // Check if there are events on this date
         if (hasEventOnDate(date, month, year)) {
+          // Check if there are events on this date
           cell.classList.add("event-marker");
           cell.appendChild(createEventTooltip(date, month, year));
         }
