@@ -3,16 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Booking</title>
     <link href="custombooking.css" rel="stylesheet" />
   </head>
 
         <body>
           <div class="booking-container">
-            <!-- from geeksforgeeks demo -->
+            <!-- inspiration from geeksforgeeks demo, found at:  https://www.geeksforgeeks.org/how-to-create-a-dynamic-calendar-in-html-css-javascript/-->
             <!-- index.html -->
           <!-- Main wrapper for the calendar application -->
-          <div class="booking-form">Booking form</div>
+          <div id="booking-form">
+            <h1>Booking form</h1>
+
+            <form id="booking-skema">
+             <div class="form-column">
+               <label for="behandslingstype">Behandslingstype</label>
+              <select id="behandslingstype" aria-placeholder="dropdown for behandslingstype">
+                <option value="none" selected disabled hidden>Vælg en type</option> 
+                <option value="Ligtorne">Ligtorne</option>
+                <option value="Nedroget negle">Nedgroet negle</option>
+                <option value="Diabetes-kontrol">Årskontrol: Diabetes</option>
+                <option value="Wellness">Fodplejebehandling</option>
+              </select>
+              <br/>
+              <label for="behandler">Behandler</label>
+              <select id="behandler" aria-placeholder="dropdown for behandler">
+                <option value="none" selected disabled hidden>Vælg en Behandler</option> 
+                <option value="Betina">Betina Veisgaard</option>
+                <option value="Barbara">Barbara Grønlund</option>
+              </select>
+              <label for="kommentar">Kommentar:</label><input type="text"/>
+            </div>
+             <div class="form-column">
+              
+              <label for="fornavn">Fornavn</label>
+              <input id="fornavn" aria-placeholder="F.eks: Jens" placeholder="F.eks: Jens"/>
+              <label for="efternavn">Efternavn</label>
+              <input id="efternavn" aria-placeholder="F.eks: Dahl" placeholder="F.eks: Dahl"/>
+              <label for="email">Email</label>
+              <input id="email" aria-placeholder="F.eks: jdahlXXX@gmail.com" placeholder="F.eks: jdahlXXX@gmail.com"/>
+            </div>
+
+            <!-- tror form skal udvides, -->
+            <!-- vil vi have en måde for eksisternde brugere at logge ind på? så behøver man ikke at udfylde personlige oplysninger igen...? -->
+            <button><a href="#Booking-calendar-view">Vælg tidspunkt</a></button>
+          </form>
+          </div>
           <div class="wrapper">
             
             <div id="Booking-calendar-view">

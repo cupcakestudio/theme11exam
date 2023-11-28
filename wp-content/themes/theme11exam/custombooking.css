@@ -25,8 +25,8 @@ p {
   font-family: "Forum", "Serif";
   font-size: 12px;
 }
-/* Calendar table */
-/* styles.css */
+
+/* inspiration from geeksforgeeks, found at: https://www.geeksforgeeks.org/how-to-create-a-dynamic-calendar-in-html-css-javascript/*/
 
 /* General styling for the entire page */
 body {
@@ -35,12 +35,34 @@ body {
   margin: 0;
 }
 
-.wrapper {
-  max-width: 500px;
-  margin: 15px auto;
+/* Booking form container  */
+#booking-form{
+background-color: #E5E7E8;
 }
 
-/* Calendar container */
+/* wrapper around calendar container */
+.wrapper, #booking-form {
+  max-width: 450px;
+  margin: 15px auto;
+}
+/* form styling */
+
+form {
+  display: flex;
+ flex-direction: column;
+}
+.form-column {display: flex;
+  flex-direction: column;}
+
+/* #booking-skema {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+} */
+#booking-skema > #behandlingstype > *{
+  font-family: "Forum", "Serif";
+  font-size: 12px;
+}
+/* Calendar container
 .container-calendar {
   background: #ffffff;
   padding: 15px;
@@ -52,7 +74,7 @@ body {
   justify-content: space-between;
 }
 
-/* Event section styling */
+/* Event section styling 
 #event-section {
   padding: 10px;
   background: #f5f5f5;
@@ -103,7 +125,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-}
+} */
 
 /* event tooltip styling */
 .event-tooltip {
@@ -280,7 +302,7 @@ td {
   /* Søndag */
 }
 
-.booking-form, .tidsbestilling-container{
+#booking-form, .tidsbestilling-container{
   border: 1px solid black;
   width: 500px;
   height: 500px;
@@ -305,4 +327,11 @@ td {
     font-family: "Forum", "Serif";
     font-size: 20px;
   }
+  .booking-container, #booking-form {
+    max-width: 1200px;
+  }
+ 
+
+  /* form styling */
+  form {display: grid; grid-template-columns: repeat(2,1fr);}
 }
