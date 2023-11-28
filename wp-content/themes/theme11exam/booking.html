@@ -24,7 +24,7 @@
 				initial-scale=1.0"
           />
           <link rel="stylesheet" href="./style.css" />
-          <title>Dynamic Calendar</title>
+          <title>Booking</title>
         </head>
 
         <body>
@@ -32,20 +32,23 @@
           <div class="wrapper">
             <div class="container-booking-form">
               <!-- BOOKING FORM SKAL VÆRE HER -->
-              </div> 
-              <div id="right">
+            </div>
+            <div id="Booking-calendar-view">
+              <div class="button-container-calendar">
+                <button id="previous" onclick="previous()">‹</button>
                 <h3 id="monthAndYear"></h3>
-                <div class="button-container-calendar">
-                  <button id="previous" onclick="previous()">‹</button>
-                  <button id="next" onclick="next()">›</button>
+                <button id="next" onclick="next()">›</button>
+              </div>
+              <div class="datebutton-container-calendar">
+                <div>
+                  <!-- Today's date button -->
+                  <label for="month">Gå til: </label>
+                  <button id="goToToday" onclick="goToToday()">
+                    Dags dato
+                  </button>
                 </div>
-                <table class="table-calendar" id="calendar" data-lang="en">
-                  <thead id="thead-month"></thead>
-                  <!-- Table body for displaying the calendar -->
-                  <tbody id="calendar-body"></tbody>
-                </table>
-                <div class="footer-container-calendar">
-                  <label for="month">Gå til i dag: </label>
+                <div>
+                  <label for="month">Hop til: </label>
                   <!-- Dropdowns to select a specific month and year -->
                   <select id="month" onchange="jump()">
                     <option value="0">Jan</option>
@@ -65,8 +68,14 @@
                   <select id="year" onchange="jump()"></select>
                 </div>
               </div>
+              <table class="table-calendar" id="calendar" data-lang="en">
+                <thead id="thead-month"></thead>
+                <!-- Table body for displaying the calendar -->
+                <tbody id="calendar-body"></tbody>
+              </table>
             </div>
           </div>
+
           <!-- Include the JavaScript file for the calendar functionality -->
           <script src="./booking.js"></script>
         </body>

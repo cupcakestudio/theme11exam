@@ -12,72 +12,6 @@ let reminderList = document.getElementById("reminderList");
 // Counter to generate unique event IDs
 let eventIdCounter = 1;
 
-// Function to add events
-// function addEvent() {
-//   let date = eventDateInput.value;
-//   let title = eventTitleInput.value;
-//   let description = eventDescriptionInput.value;
-
-//   if (date && title) {
-//     // Create a unique event ID
-//     let eventId = eventIdCounter++;
-
-//     events.push({
-//       id: eventId,
-//       date: date,
-//       title: title,
-//       description: description,
-//     });
-//     showCalendar(currentMonth, currentYear);
-//     eventDateInput.value = "";
-//     eventTitleInput.value = "";
-//     eventDescriptionInput.value = "";
-//     displayReminders();
-//   }
-// }
-
-// Function to delete an event by ID
-// function deleteEvent(eventId) {
-//   // Find the index of the event with the given ID
-//   let eventIndex = events.findIndex((event) => event.id === eventId);
-
-//   if (eventIndex !== -1) {
-//     // Remove the event from the events array
-//     events.splice(eventIndex, 1);
-//     showCalendar(currentMonth, currentYear);
-//     displayReminders();
-//   }
-// }
-
-// // Function to display reminders
-// function displayReminders() {
-//   reminderList.innerHTML = "";
-//   for (let i = 0; i < events.length; i++) {
-//     let event = events[i];
-//     let eventDate = new Date(event.date);
-//     if (
-//       eventDate.getMonth() === currentMonth &&
-//       eventDate.getFullYear() === currentYear
-//     ) {
-//       let listItem = document.createElement("li");
-//       listItem.innerHTML = `<strong>${event.title}</strong> -
-// 			${event.description} on
-// 			${eventDate.toLocaleDateString()}`;
-
-//       // Add a delete button for each reminder item
-//       let deleteButton = document.createElement("button");
-//       deleteButton.className = "delete-event";
-//       deleteButton.textContent = "Delete";
-//       deleteButton.onclick = function () {
-//         deleteEvent(event.id);
-//       };
-
-//       listItem.appendChild(deleteButton);
-//       reminderList.appendChild(listItem);
-//     }
-//   }
-// }
-
 // Function to generate a range of
 // years for the year select input
 function generate_year_range(start, end) {
@@ -92,16 +26,28 @@ function generate_year_range(start, end) {
 today = new Date();
 currentMonth = today.getMonth();
 currentYear = today.getFullYear();
-selectYear = document.getElementById("year");
-selectMonth = document.getElementById("month");
-
+SelectedMonth = document.getElementById("month");
+SelectedYear = document.getElementById("year");
 createYear = generate_year_range(1970, 2050);
 
 document.getElementById("year").innerHTML = createYear;
 
 let calendar = document.getElementById("calendar");
 
-let months = ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
+let months = [
+  "Januar",
+  "Februar",
+  "Marts",
+  "April",
+  "Maj",
+  "Juni",
+  "Juli",
+  "August",
+  "September",
+  "Oktober",
+  "November",
+  "December",
+];
 let days = ["Man", "Tir", "Ons", "Tor", "Fre", "Lør", "Søn"];
 
 $dataHead = "<tr>";
@@ -129,21 +75,14 @@ function previous() {
   showCalendar(currentMonth, currentYear);
 }
 
-// Function to jump to a specific month and year
-function jump() {
-  currentYear = parseInt(selectYear.value);
-  currentMonth = parseInt(selectMonth.value);
-  showCalendar(currentMonth, currentYear);
-}
-
 // Function to display the calendar
 function showCalendar(month, year) {
   let firstDay = new Date(year, month, 1).getDay();
   tbl = document.getElementById("calendar-body");
   tbl.innerHTML = "";
   monthAndYear.innerHTML = months[month] + " " + year;
-  selectYear.value = year;
-  selectMonth.value = month;
+  SelectedMonth.value = month;
+  SelectedYear.value = year;
 
   let date = 1;
   for (let i = 0; i < 6; i++) {
@@ -165,7 +104,11 @@ function showCalendar(month, year) {
         cell.className = "date-picker";
         cell.innerHTML = "<span class='circle' style='background-color: " + (days[j] === "Lør" || days[j] === "Søn" ? "darkgray" : "") + "'>" + date + "</span>";
 
-        if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+        if (
+          date === today.getDate() &&
+          year === today.getFullYear() &&
+          month === today.getMonth()
+        ) {
           cell.className = "date-picker selected";
         }
 
@@ -181,8 +124,20 @@ function showCalendar(month, year) {
     }
     tbl.appendChild(row);
   }
+}
+//Function to go to today's date
+function goToToday() {
+  today = new Date();
+  currentMonth = today.getMonth();
+  currentYear = today.getFullYear();
+  showCalendar(currentMonth, currentYear);
+}
 
-  displayReminders();
+//Function to jump to selected date in dropdown:
+function jump() {
+  currentMonth = parseInt(SelectedMonth.value);
+  currentYear = parseInt(SelectedYear.value);
+  showCalendar(currentMonth, currentYear);
 }
 
 // Function to create an event tooltip
@@ -207,7 +162,11 @@ function createEventTooltip(date, month, year) {
 function getEventsOnDate(date, month, year) {
   return events.filter(function (event) {
     let eventDate = new Date(event.date);
-    return eventDate.getDate() === date && eventDate.getMonth() === month && eventDate.getFullYear() === year;
+    return (
+      eventDate.getDate() === date &&
+      eventDate.getMonth() === month &&
+      eventDate.getFullYear() === year
+    );
   });
 }
 
