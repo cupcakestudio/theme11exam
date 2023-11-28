@@ -161,10 +161,18 @@ body {
 }
 
 /* Buttons in the calendar */
-.button-container-calendar button {
+.button-container-calendar button, .datebutton-container-calendar button{
   cursor: pointer;
   background: var(--cta-color);
   color: #fff;
+  border: 1px solid var(--cta-color);
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.button-container-calendar button:hover, .datebutton-container-calendar button:hover{
+  cursor: pointer;
+  background: #fbfaf9;
+  color: var(--cta-color);
   border: 1px solid var(--cta-color);
   border-radius: 4px;
   padding: 5px 10px;
@@ -223,10 +231,12 @@ body {
 
 /* Navigation buttons */
 .button-container-calendar {
+  display: flex;
   position: relative;
   margin-bottom: 1em;
   overflow: hidden;
   clear: both;
+  align-items: center;
 }
 
 #previous {
@@ -238,19 +248,15 @@ body {
 }
 
 /* Footer styling */
-.footer-container-calendar {
+.datebutton-container-calendar {
+  display: flex;
   margin-top: 1em;
-  border-top: 1px solid #dadada;
   padding: 10px 0;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.footer-container-calendar select {
-  cursor: pointer;
-  background: #ffffff;
-  color: #585858;
-  border: 1px solid #bfc5c5;
-  border-radius: 3px;
-  padding: 5px 1em;
+.datebutton-container-calendar > * {
+margin-inline: 0;
 }
 
 /* circle border */
