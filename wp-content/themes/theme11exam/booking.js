@@ -12,6 +12,8 @@ let reminderList = document.getElementById("reminderList");
 // Counter to generate unique event IDs
 let eventIdCounter = 1;
 
+// ARRAY - tidsbestillinger
+
 // Function to generate a range of
 // years for the year select input
 function generate_year_range(start, end) {
@@ -34,20 +36,7 @@ document.getElementById("year").innerHTML = createYear;
 
 let calendar = document.getElementById("calendar");
 
-let months = [
-  "Januar",
-  "Februar",
-  "Marts",
-  "April",
-  "Maj",
-  "Juni",
-  "Juli",
-  "August",
-  "September",
-  "Oktober",
-  "November",
-  "December",
-];
+let months = ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
 let days = ["Man", "Tir", "Ons", "Tor", "Fre", "Lør", "Søn"];
 
 $dataHead = "<tr>";
@@ -104,12 +93,9 @@ function showCalendar(month, year) {
         cell.className = "date-picker";
         cell.innerHTML = "<span class='circle' style='background-color: " + (days[j] === "Lør" || days[j] === "Søn" ? "darkgray" : "") + "'>" + date + "</span>";
 
-        if (
-          date === today.getDate() &&
-          year === today.getFullYear() &&
-          month === today.getMonth()
-        ) {
+        if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
           cell.className = "date-picker selected";
+          if (cell.className === "date-picker selected") cell.innerHTML = "<span class='circle' style='background-color: transparent" + "'>" + date + "</span>";
         }
 
         if (hasEventOnDate(date, month, year)) {
@@ -118,6 +104,12 @@ function showCalendar(month, year) {
           cell.appendChild(createEventTooltip(date, month, year));
         }
 
+        // Add click functionality to dates
+        cell.addEventListener("click", function () {
+          let clickedDate = this.getAttribute("data-date");
+          console.log("date clicked", clickedDate);
+        });
+
         row.appendChild(cell);
         date++;
       }
@@ -125,6 +117,9 @@ function showCalendar(month, year) {
     tbl.appendChild(row);
   }
 }
+
+//Handle cliked date (show tidsbestilling)
+
 //Function to go to today's date
 function goToToday() {
   today = new Date();
@@ -162,11 +157,7 @@ function createEventTooltip(date, month, year) {
 function getEventsOnDate(date, month, year) {
   return events.filter(function (event) {
     let eventDate = new Date(event.date);
-    return (
-      eventDate.getDate() === date &&
-      eventDate.getMonth() === month &&
-      eventDate.getFullYear() === year
-    );
+    return eventDate.getDate() === date && eventDate.getMonth() === month && eventDate.getFullYear() === year;
   });
 }
 

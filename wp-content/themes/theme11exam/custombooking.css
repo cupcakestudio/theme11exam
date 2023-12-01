@@ -161,7 +161,8 @@ body {
 }
 
 /* Buttons in the calendar */
-.button-container-calendar button, .datebutton-container-calendar button{
+.button-container-calendar button,
+.datebutton-container-calendar button {
   cursor: pointer;
   background: var(--cta-color);
   color: #fff;
@@ -169,7 +170,8 @@ body {
   border-radius: 4px;
   padding: 5px 10px;
 }
-.button-container-calendar button:hover, .datebutton-container-calendar button:hover{
+.button-container-calendar button:hover,
+.datebutton-container-calendar button:hover {
   cursor: pointer;
   background: #fbfaf9;
   color: var(--cta-color);
@@ -198,6 +200,13 @@ body {
 }
 
 .date-picker.selected span {
+  border: 1px solid var(--cta-color);
+  background-color: transparent;
+  color: var(--cta-color);
+  font-size: 20px;
+}
+
+.circle.selected span {
   border: 1px solid var(--cta-color);
   background-color: transparent;
   color: var(--cta-color);
@@ -246,7 +255,7 @@ body {
   align-items: center;
 }
 .datebutton-container-calendar > * {
-margin-inline: 0;
+  margin-inline: 0;
 }
 
 /* circle border */
@@ -280,12 +289,12 @@ td {
   /* Søndag */
 }
 
-.booking-form, .tidsbestilling-container{
+.booking-form,
+.tidsbestilling-container {
   border: 1px solid black;
   width: 500px;
   height: 500px;
 }
-
 
 @media (min-width: 500px) {
   h1,
