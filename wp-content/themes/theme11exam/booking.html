@@ -15,10 +15,11 @@
           <div id="booking-form">
             <h1>Booking form</h1>
 
-            <form id="booking-skema">
+            <form id="booking-skema" >
+              <!-- action=/confirm.html -->
              <div class="form-column">
-               <label for="behandslingstype">Behandslingstype</label>
-              <select id="behandslingstype" aria-placeholder="dropdown for behandslingstype">
+               <label for="behandlingstype">Behandlingstype</label>
+              <select id="behandlingstype" name="Behandlingstype"aria-placeholder="dropdown for behandslingstype">
                 <option value="none" selected disabled hidden>Vælg en type</option> 
                 <option value="Ligtorne">Ligtorne</option>
                 <option value="Nedroget negle">Nedgroet negle</option>
@@ -27,28 +28,27 @@
               </select>
               <br/>
               <label for="behandler">Behandler</label>
-              <select id="behandler" aria-placeholder="dropdown for behandler">
+              <select id="behandler" name="Behandler" aria-placeholder="dropdown for behandler">
                 <option value="none" selected disabled hidden>Vælg en Behandler</option> 
                 <option value="Betina">Betina Veisgaard</option>
                 <option value="Barbara">Barbara Grønlund</option>
               </select>
-              <label for="kommentar">Kommentar:</label><input type="text"/>
+              <label for="kommentar">Kommentar:</label><input type="textarea" id="kommentar" name="Kommentar"/>
             </div>
              <div class="form-column">
               
               <label for="fornavn">Fornavn</label>
-              <input id="fornavn" aria-placeholder="F.eks: Jens" placeholder="F.eks: Jens"/>
+              <input id="fornavn" name="Fornavn" aria-placeholder="F.eks: Jens" placeholder="F.eks: Jens" type="text"/>
               <label for="efternavn">Efternavn</label>
-              <input id="efternavn" aria-placeholder="F.eks: Dahl" placeholder="F.eks: Dahl"/>
+              <input id="efternavn" name="Efternavn" aria-placeholder="F.eks: Dahl" placeholder="F.eks: Dahl" type="text"/>
               <label for="email">Email</label>
-              <input id="email" aria-placeholder="F.eks: jdahlXXX@gmail.com" placeholder="F.eks: jdahlXXX@gmail.com"/>
-            </div>
-
-            <!-- tror form skal udvides, -->
+              <input id="email" name="Email" aria-placeholder="F.eks: jdahlXXX@gmail.com" placeholder="F.eks: jdahlXXX@gmail.com" type="email"/>
+           <!-- tror form skal udvides, -->
             <!-- vil vi have en måde for eksisternde brugere at logge ind på? så behøver man ikke at udfylde personlige oplysninger igen...? -->
-            <button><a href="#Booking-calendar-view">Vælg tidspunkt</a></button>
-          </form>
-          </div>
+            <button><a href="#Booking-calendar-view">Vælg tidspunkt</a></button> </div>
+
+            
+          
           <div class="wrapper">
             
             <div id="Booking-calendar-view">
@@ -97,10 +97,12 @@
               Tidsbestilling
             </div>
           </div>
-          
-
+          <button type="submit">Book tid</button>
+</form>
+          </div>
           <!-- Include the JavaScript file for the calendar functionality -->
           <script src="./booking.js"></script>
+          <!-- <script src="api/confirm-booking.js"></script> -->
         </body>
       
     </div>

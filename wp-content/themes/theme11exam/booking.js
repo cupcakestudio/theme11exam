@@ -102,7 +102,12 @@ function showCalendar(month, year) {
         cell.setAttribute("data-year", year);
         cell.setAttribute("data-month_name", months[month]);
         cell.className = "date-picker";
-        cell.innerHTML = "<span class='circle' style='background-color: " + (days[j] === "Lør" || days[j] === "Søn" ? "darkgray" : "") + "'>" + date + "</span>";
+        cell.innerHTML =
+          "<span class='circle' style='background-color: " +
+          (days[j] === "Lør" || days[j] === "Søn" ? "darkgray" : "") +
+          "'>" +
+          date +
+          "</span>";
 
         if (
           date === today.getDate() &&
@@ -182,3 +187,77 @@ function daysInMonth(iMonth, iYear) {
 
 // Call the showCalendar function initially to display the calendar
 showCalendar(currentMonth, currentYear);
+
+//EXTRACT THE FORM'S DATA AND SAVE IN OBJECT:
+
+function getFormfromData(form) {
+  //iterate through the form's inputs, select and textarea values
+  const bookingFormData = {};
+  for (const element of form.elements) {
+    if (element.id) {
+      if (element.tagName === "Select") {
+        //chatgpt's suggestion
+        // For select elements, get all selected options' values
+        // it creates an array (selectedOptions) containing all selected option values.
+        // This array is then assigned to the corresponding bookingFormData property.
+        const selectedOptions = [...element.selectedOptions].map(
+          (option) => option.value
+        );
+        bookingFormData[element.id] = selectedOptions;
+      } else if (element.tagName === "Textarea") {
+        bookingFormData[element.id] = element.valueOf;
+      } else {
+        // Add the element's id and value to the formData object
+        bookingFormData[element.id] = element.value;
+      }
+    }
+  }
+  return bookingFormData;
+}
+
+//vars to get booking form from html.
+const booking = document.getElementById("booking-skema");
+
+//BOOKING CONFIRMATION SEND PAYLOAD TO DB
+booking.addEventListener("submit", confirmReservation);
+function confirmReservation(e) {
+  e.preventDefault();
+
+  const bookingFormDataValues = getFormfromData(booking);
+
+  // console.log("Form input values:", bookingFormData);
+  const payload = {
+    Date: bookingFormDataValues.date,
+    PatientName: `${
+      bookingFormDataValues.fornavn + " " + bookingFormDataValues.efternavn
+    }`,
+    Email: bookingFormDataValues.email,
+    Behandler: bookingFormDataValues.behandler,
+    Behandlingstype: bookingFormDataValues.behandlingstype,
+    Kommentar: `${bookingFormDataValues.kommentar}`,
+  };
+  console.log("this is payload", payload);
+  // /* Fetcher fra api "confirm-order" */
+  // fetch("/api/confirm-booking", {
+  //   method: "post",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(payload),
+  // })
+  //   .then((res) => res.json())
+  //   .then((data) => console.log(data, "hej"));
+
+  // // /* dispatch fetcher data fra udfyldte forms og sender det til api "fullfill-reservation" */
+  // // fetch("https://nova-enchanted-confidence.glitch.me/fullfill-reservation", {
+  // //   method: "post",
+  // //   headers: {
+  // //     "Content-Type": "application/json",
+  // //   },
+  // //   body: JSON.stringify({
+  // //     id: formData.id,
+  // //   }),
+  // // });
+  // dispatch({ action: "SUBMIT" });
+  // console.log("THIS IS PAYLOAD", payload);
+}
