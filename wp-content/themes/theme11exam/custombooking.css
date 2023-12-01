@@ -206,13 +206,6 @@ body {
   font-size: 20px;
 }
 
-.circle.selected span {
-  border: 1px solid var(--cta-color);
-  background-color: transparent;
-  color: var(--cta-color);
-  font-size: 20px;
-}
-
 /* Hover effect for date cells */
 /* .date-picker:hover {
 } */

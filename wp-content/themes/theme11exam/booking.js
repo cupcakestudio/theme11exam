@@ -107,6 +107,16 @@ function showCalendar(month, year) {
         // Add click functionality to dates
         cell.addEventListener("click", function () {
           let clickedDate = this.getAttribute("data-date");
+
+          // Remove 'selected' from all elements
+          let allCells = document.querySelectorAll(".date-picker");
+          allCells.forEach(function (cell) {
+            cell.classList.remove("selected");
+          });
+
+          // Adds styling to selected date
+          this.classList.add("selected");
+
           console.log("date clicked", clickedDate);
         });
 
