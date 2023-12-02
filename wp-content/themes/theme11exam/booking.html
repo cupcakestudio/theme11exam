@@ -17,9 +17,11 @@
 
             <form id="booking-skema" >
               <!-- action=/confirm.html -->
+              <div class="wrapper" id="booking-form-wrapper">
+            
              <div class="form-column">
                <label for="behandlingstype">Behandlingstype</label>
-              <select id="behandlingstype" name="Behandlingstype"aria-placeholder="dropdown for behandslingstype">
+              <select id="behandlingstype" name="Behandlingstype" aria-placeholder="dropdown for behandslingstype" required>
                 <option value="none" selected disabled hidden>Vælg en type</option> 
                 <option value="Ligtorne">Ligtorne</option>
                 <option value="Nedroget negle">Nedgroet negle</option>
@@ -28,7 +30,7 @@
               </select>
               <br/>
               <label for="behandler">Behandler</label>
-              <select id="behandler" name="Behandler" aria-placeholder="dropdown for behandler">
+              <select id="behandler" name="Behandler" aria-placeholder="dropdown for behandler" required>
                 <option value="none" selected disabled hidden>Vælg en Behandler</option> 
                 <option value="Betina">Betina Veisgaard</option>
                 <option value="Barbara">Barbara Grønlund</option>
@@ -38,18 +40,18 @@
              <div class="form-column">
               
               <label for="fornavn">Fornavn</label>
-              <input id="fornavn" name="Fornavn" aria-placeholder="F.eks: Jens" placeholder="F.eks: Jens" type="text"/>
+              <input id="fornavn" name="Fornavn" aria-placeholder="F.eks: Jens" placeholder="F.eks: Jens" type="text" required/>
               <label for="efternavn">Efternavn</label>
-              <input id="efternavn" name="Efternavn" aria-placeholder="F.eks: Dahl" placeholder="F.eks: Dahl" type="text"/>
+              <input id="efternavn" name="Efternavn" aria-placeholder="F.eks: Dahl" placeholder="F.eks: Dahl" type="text" required/>
               <label for="email">Email</label>
-              <input id="email" name="Email" aria-placeholder="F.eks: jdahlXXX@gmail.com" placeholder="F.eks: jdahlXXX@gmail.com" type="email"/>
+              <input id="email" name="Email" aria-placeholder="F.eks: jdahlXXX@gmail.com" placeholder="F.eks: jdahlXXX@gmail.com" type="email" required/>
            <!-- tror form skal udvides, -->
             <!-- vil vi have en måde for eksisternde brugere at logge ind på? så behøver man ikke at udfylde personlige oplysninger igen...? -->
             <button><a href="#Booking-calendar-view">Vælg tidspunkt</a></button> </div>
 
-            
+              </div>
           
-          <div class="wrapper">
+          <div class="wrapper" id="calendar-wrapper">
             
             <div id="Booking-calendar-view">
               <div class="button-container-calendar">
@@ -95,9 +97,9 @@
             <div class="tidsbestilling-container">
               <!-- Tidsbestilling -->
               Tidsbestilling
-            </div>
+            </div><button type="submit">Book tid</button>
           </div>
-          <button type="submit">Book tid</button>
+          
 </form>
           </div>
           <!-- Include the JavaScript file for the calendar functionality -->

@@ -26,161 +26,67 @@ p {
   font-size: 12px;
 }
 
+button , a { cursor: pointer;
+  background: var(--cta-color);
+  color: #fff;
+  border: 1px solid var(--cta-color);
+  border-radius: 4px;
+  padding: 5px 10px;}
 /* inspiration from geeksforgeeks, found at: https://www.geeksforgeeks.org/how-to-create-a-dynamic-calendar-in-html-css-javascript/*/
 
-/* General styling for the entire page */
-body {
-  font-family: Arial, sans-serif;
-  background-color: white;
-  margin: 0;
-}
+
 
 /* Booking form container  */
 #booking-form{
-background-color: #E5E7E8;
+background-color: #849098;
 }
 
 /* wrapper around calendar container */
 .wrapper, #booking-form {
-  max-width: 450px;
+  max-width: 500px;
   margin: 15px auto;
+}
+.wrapper {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+}
+
+#booking-form-wrapper > *{
+  width: 500px;
+}
+#Booking-calendar-view{
+  width: 500px;
 }
 /* form styling */
 
 form {
   display: flex;
  flex-direction: column;
+ background-color: #849098;
 }
-.form-column {display: flex;
-  flex-direction: column;}
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  background-color: #849098;
+}
+.form-column:nth-child(2) {
+  padding-top: 2em;
+  
+}
 
-/* #booking-skema {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-} */
+input {
+  
+  background-color: #fbfaf9;
+  border-radius: 5%;
+}
+
 #booking-skema > #behandlingstype > *{
   font-family: "Forum", "Serif";
   font-size: 12px;
 }
-/* Calendar container
-.container-calendar {
-  background: #ffffff;
-  padding: 15px;
-  max-width: 900px;
-  margin: 0 auto;
-  overflow: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: space-between;
-}
 
-/* Event section styling 
-#event-section {
-  padding: 10px;
-  background: #f5f5f5;
-  margin: 20px 0;
-  border: 1px solid #ccc;
-}
-
-.container-calendar #left h1 {
-  color: green;
-  text-align: center;
-  background-color: #f2f2f2;
-  margin: 0;
-  padding: 10px 0;
-}
-
-#event-section h3 {
-  color: green;
-  font-size: 18px;
-  margin: 0;
-}
-
-#event-section input[type="date"],
-#event-section input[type="text"] {
-  margin: 10px 0;
-  padding: 5px;
-  width: 80%;
-}
-
-#event-section button {
-  background: green;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.event-marker {
-  position: relative;
-}
-
-.event-marker::after {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 6px;
-  background-color: red;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-} */
-
-/* event tooltip styling */
-.event-tooltip {
-  position: absolute;
-  background-color: rgba(234, 232, 232, 0.763);
-  color: black;
-  padding: 10px;
-  border-radius: 4px;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  transition: all 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.event-marker:hover .event-tooltip {
-  display: block;
-}
-
-/* Reminder section styling */
-#reminder-section {
-  padding: 10px;
-  background: #f5f5f5;
-  margin: 20px 0;
-  border: 1px solid #ccc;
-}
-
-#reminder-section h3 {
-  color: green;
-  font-size: 18px;
-  margin: 0;
-}
-
-#reminderList {
-  list-style: none;
-  padding: 0;
-}
-
-#reminderList li {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-/* Style for the delete buttons */
-.delete-event {
-  background: rgb(237, 19, 19);
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-left: 10px;
-  align-items: right;
-}
 
 /* Buttons in the calendar */
 .button-container-calendar button, .datebutton-container-calendar button{
@@ -302,14 +208,14 @@ td {
   /* Søndag */
 }
 
-#booking-form, .tidsbestilling-container{
+#booking-form{
   border: 1px solid black;
   width: 500px;
   height: 500px;
 }
 
 
-@media (min-width: 500px) {
+@media (min-width: 510px) {
   h1,
   h2,
   h3 {
@@ -329,9 +235,138 @@ td {
   }
   .booking-container, #booking-form {
     max-width: 1200px;
+    width: 1200px;
   }
  
+  .wrapper {
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
 
+
+  #calendar-wrapper {
+    grid-column-start: 1
+  }
   /* form styling */
   form {display: grid; grid-template-columns: repeat(2,1fr);}
 }
+/* Calendar container
+.container-calendar {
+  background: #ffffff;
+  padding: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Event section styling 
+#event-section {
+  padding: 10px;
+  background: #f5f5f5;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+}
+
+.container-calendar #left h1 {
+  color: green;
+  text-align: center;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 10px 0;
+}
+
+#event-section h3 {
+  color: green;
+  font-size: 18px;
+  margin: 0;
+}
+
+#event-section input[type="date"],
+#event-section input[type="text"] {
+  margin: 10px 0;
+  padding: 5px;
+  width: 80%;
+}
+
+#event-section button {
+  background: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.event-marker {
+  position: relative;
+}
+
+.event-marker::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+} */
+
+/* event tooltip styling */
+/* .event-tooltip {
+  position: absolute;
+  background-color: rgba(234, 232, 232, 0.763);
+  color: black;
+  padding: 10px;
+  border-radius: 4px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.event-marker:hover .event-tooltip {
+  display: block;
+}
+
+/* Reminder section styling */
+/* #reminder-section {
+  padding: 10px;
+  background: #f5f5f5;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+}
+
+#reminder-section h3 {
+  color: green;
+  font-size: 18px;
+  margin: 0;
+}
+
+#reminderList {
+  list-style: none;
+  padding: 0;
+}
+
+#reminderList li {
+  margin: 5px 0;
+  font-size: 16px;
+} */
+
+/* Style for the delete buttons */
+/* .delete-event {
+  background: rgb(237, 19, 19);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  align-items: right;
+} */ 
