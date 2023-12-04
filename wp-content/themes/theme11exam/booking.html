@@ -23,7 +23,7 @@
              <div class="form-column">
                <label for="behandlingstype">Behandlingstype</label>
               <select id="behandlingstype" name="Behandlingstype" aria-placeholder="dropdown for behandslingstype" required>
-                <option value="none" selected disabled hidden>Vælg en type</option> 
+                <option value="" selected disabled hidden>Vælg en type</option> 
                 <option value="Ligtorne">Ligtorne</option>
                 <option value="Nedroget negle">Nedgroet negle</option>
                 <option value="Diabetes-kontrol">Årskontrol: Diabetes</option>
@@ -32,7 +32,7 @@
               <br/>
               <label for="behandler">Behandler</label>
               <select id="behandler" name="Behandler" aria-placeholder="dropdown for behandler" required>
-                <option value="none" selected disabled hidden>Vælg en Behandler</option> 
+                <option value="" selected disabled hidden>Vælg en Behandler</option> 
                 <option value="Betina">Betina Veisgaard</option>
                 <option value="Barbara">Barbara Grønlund</option>
               </select>
@@ -45,7 +45,7 @@
               <label for="efternavn">Efternavn</label>
               <input id="efternavn" name="Efternavn" aria-placeholder="F.eks: Dahl" placeholder="F.eks: Dahl" type="text" required/>
               <label for="email">Email</label>
-              <input id="email" name="Email" aria-placeholder="F.eks: jdahlXXX@gmail.com" placeholder="F.eks: jdahlXXX@gmail.com" type="email" required/>
+              <input id="email" name="Email" aria-placeholder="F.eks: jdahlXXX@gmail.com" placeholder="F.eks: jdahlXXX@gmail.com" type="email" required pattern="/^[^s@]+@[^s@]+.[^s@]+$/"/>
            <!-- tror form skal udvides, -->
             <!-- vil vi have en måde for eksisternde brugere at logge ind på? så behøver man ikke at udfylde personlige oplysninger igen...? -->
             <button><a href="#Booking-calendar-view">Vælg tidspunkt</a></button> </div>
