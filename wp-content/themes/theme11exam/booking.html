@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booking</title>
     <link href="custombooking.css" rel="stylesheet" />
+    <script src="./scripts/validation.js"></script>
   </head>
 
         <body>
@@ -15,7 +16,7 @@
           <div id="booking-form">
             <h1>Booking form</h1>
 
-            <form id="booking-skema" >
+            <form id="booking-skema" onsubmit="return validateForm()">
               <!-- action=/confirm.html -->
               <div class="wrapper" id="booking-form-wrapper">
             
@@ -97,13 +98,14 @@
             <div class="tidsbestilling-container">
               <!-- Tidsbestilling -->
               Tidsbestilling
-            </div><button type="submit">Book tid</button>
+            </div>
+            <button type="submit">Book tid</button>
           </div>
           
 </form>
           </div>
           <!-- Include the JavaScript file for the calendar functionality -->
-          <script src="./booking.js"></script>
+          <script src="./scripts/booking.js"></script>
           <!-- <script src="api/confirm-booking.js"></script> -->
         </body>
       
