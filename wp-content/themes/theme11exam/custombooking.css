@@ -6,6 +6,7 @@
   --cta-color: #051a63;
   font-family: "DM Serif Text", "Forum", "serif";
   --h1: ;
+  max-width: 350px;
 }
 
 h1,
@@ -287,6 +288,56 @@ td {
   border: 1px solid black;
   width: 500px;
   height: 500px;
+}
+
+ /* Available appointments */
+#appointment_container {
+  overflow-y: auto;
+  height: 400px;
+  border: 1px solid var(--cta-color);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.timeSlotWithBorder {
+  border-bottom: 1px solid #363944;
+  padding-block: 12px;
+  display: flex;
+}
+.paddingTop{
+  padding-top: 12px;
+  display: flex;
+}
+#timeSlotsContainer{
+  margin-top: 12px;
+  overflow-y: auto;
+}
+
+.hidden{
+  display: none;
+}
+
+
+  /* My appointments container */
+#my_appointments{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 350px;
+  height: 350px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.appointment_list{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 26px;
+  margin-top: 12px;
+}
+
+.palceholder_text{
+  margin-top: 8px;
+  color: grey;
 }
 
 @media (min-width: 500px) {

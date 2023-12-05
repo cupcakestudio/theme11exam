@@ -95,7 +95,7 @@ function showCalendar(month, year) {
 
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
           cell.className = "date-picker selected";
-          if (cell.className === "date-picker selected") cell.innerHTML = "<span class='circle' style='background-color: transparent" + "'>" + date + "</span>";
+          /*  if (cell.className === "date-picker selected") cell.innerHTML = "<span class='circle' style='background-color: transparent" + "'>" + date + "</span>"; */
         }
 
         if (hasEventOnDate(date, month, year)) {
@@ -108,16 +108,21 @@ function showCalendar(month, year) {
         cell.addEventListener("click", function () {
           let clickedDate = this.getAttribute("data-date");
 
-          // Remove 'selected' from all elements
+          // Remove 'selected' from all other dates
           let allCells = document.querySelectorAll(".date-picker");
           allCells.forEach(function (cell) {
             cell.classList.remove("selected");
           });
+                    // Remove 'hidden' class from appointment container so appointments show
+document.getElementById("appointment_container").classList.remove("hidden");
 
           // Adds styling to selected date
           this.classList.add("selected");
+          if (cell.className === "date-picker selected") cell.innerHTML = "<span class='circle' style='background-color: transparent" + "'>" + date + "</span>";
 
           console.log("date clicked", clickedDate);
+
+
         });
 
         row.appendChild(cell);
@@ -128,7 +133,8 @@ function showCalendar(month, year) {
   }
 }
 
-//Handle cliked date (show tidsbestilling)
+
+
 
 //Function to go to today's date
 function goToToday() {
@@ -183,3 +189,107 @@ function daysInMonth(iMonth, iYear) {
 
 // Call the showCalendar function initially to display the calendar
 showCalendar(currentMonth, currentYear);
+
+
+//data for available time slots Appointments
+function ListOfTimeSlots () {
+const data = [
+  {
+    timeSlot: "kl. 8" ,
+    specialist: "Barbara"
+  },
+  {
+    timeSlot: "kl. 8" ,
+    specialist: "Betina"
+  },
+  {
+    timeSlot: "kl. 10" ,
+    specialist: "Barbara"
+  },
+  {
+    timeSlot: "kl. 10" ,
+    specialist: "Betina"
+  },
+  {
+    timeSlot: "kl. 12" ,
+    specialist: "Barbara"
+  },
+  {
+    timeSlot: "kl. 12" ,
+    specialist: "Betina"
+  },
+  {
+    timeSlot: "kl. 14" ,
+    specialist: "Barbara"
+  },
+  {
+    timeSlot: "kl. 14" ,
+    specialist: "Betina"
+  }
+]
+
+const timeSlotsContainer = document.getElementById("timeSlotsContainer");
+const myAppointmentsContainer = document.getElementById("my_appointments");
+// placeholder when no appointments
+const placeholderNoAppointments = document.createElement("p");
+placeholderNoAppointments.classList.add("palceholder_text")
+placeholderNoAppointments.textContent = "Du har endnu ingen bookinger. Vælg en dato og en ledig tid. Når du har booked en tid, vil dine tider blive vist her."
+
+
+data.forEach((item, i) => {
+  const timeSlotElement = document.createElement("div");
+  timeSlotElement.classList.add('timeSlot');
+
+  const textElement = document.createElement("p");
+  textElement.textContent = `Tidspunkt: ${item.timeSlot} - Behandler: ${item.specialist}`;
+
+  const bookBtn = document.createElement("button");
+  bookBtn.textContent = "Book";
+
+// When an appointment is added remove the placeholder text
+function updatePlaceholder() {
+  const appointments = myAppointmentsContainer.querySelectorAll(".appointment_list");
+  if (appointments.length === 0) {
+    placeholderNoAppointments.style.display = "block"; // Show placeholder text
+  } else {
+    placeholderNoAppointments.style.display = "none"; // Hide placeholder text
+  }
+}
+
+  // booking button for available appointment 
+  bookBtn.addEventListener("click", function() {
+    console.log("Go to confirmation page");
+
+      // Flytter den valgte tid og behandler til "Mine bookinger" container
+      const selectedAppointment = document.createElement("div");
+      selectedAppointment.classList.add("appointment_list");
+      selectedAppointment.textContent = textElement.textContent;
+      myAppointmentsContainer.appendChild(selectedAppointment);
+
+
+    //hide available appointments conatiainer
+    document.getElementById("appointment_container").classList.add("hidden");
+
+    updatePlaceholder();
+  });
+
+
+  timeSlotElement.appendChild(textElement);
+  timeSlotElement.appendChild(bookBtn);
+  myAppointmentsContainer.appendChild(placeholderNoAppointments);
+
+  if (i !== data.length - 1) {
+    timeSlotElement.classList.add('timeSlotWithBorder');
+
+
+  }
+  if (i === data.length - 1) {
+    timeSlotElement.classList.add('paddingTop');
+  }
+
+  timeSlotsContainer.appendChild(timeSlotElement);
+});
+}
+
+ListOfTimeSlots();
+
