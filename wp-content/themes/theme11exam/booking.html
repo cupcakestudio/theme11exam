@@ -61,13 +61,31 @@
                Ledige tider
                <div id="timeSlotsContainer"></div>
             </div>
+            <div id="confirmation_container" >
+              <!-- Bekræftelses side --> 
+               Booking bekræftet
+            </div>
             <div id="my_appointments" >
               <!-- Mine bookinger -->
                Mine bookinger
-             
             </div>
           </div>
+
           
+         <!-- ALERT MODAL-->
+             <div id="modal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-message"></p>
+                <p class="time"></p>
+                <p class="specialist"></p>
+                <button id="cancel-button">Cancel</button>
+                <button id="action-button"></button>
+              </div>
+            </div>
+            
+
 
           <!-- Include the JavaScript file for the calendar functionality -->
           <script src="./booking.js"></script>

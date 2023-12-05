@@ -12,8 +12,6 @@ let reminderList = document.getElementById("reminderList");
 // Counter to generate unique event IDs
 let eventIdCounter = 1;
 
-// ARRAY - tidsbestillinger
-
 // Function to generate a range of
 // years for the year select input
 function generate_year_range(start, end) {
@@ -133,9 +131,6 @@ document.getElementById("appointment_container").classList.remove("hidden");
   }
 }
 
-
-
-
 //Function to go to today's date
 function goToToday() {
   today = new Date();
@@ -191,8 +186,11 @@ function daysInMonth(iMonth, iYear) {
 showCalendar(currentMonth, currentYear);
 
 
+// ********************** TIDSBESTILLING, BEKRÆFTELSESSIDE OG MINE BOOKLINGER *******************//
+
 //data for available time slots Appointments
 function ListOfTimeSlots () {
+  //indsæt den rigtige data 
 const data = [
   {
     timeSlot: "kl. 8" ,
@@ -230,13 +228,17 @@ const data = [
 
 const timeSlotsContainer = document.getElementById("timeSlotsContainer");
 const myAppointmentsContainer = document.getElementById("my_appointments");
+
 // placeholder when no appointments
 const placeholderNoAppointments = document.createElement("p");
-placeholderNoAppointments.classList.add("palceholder_text")
+placeholderNoAppointments.classList.add("placeholder_text")
 placeholderNoAppointments.textContent = "Du har endnu ingen bookinger. Vælg en dato og en ledig tid. Når du har booked en tid, vil dine tider blive vist her."
+myAppointmentsContainer.appendChild(placeholderNoAppointments);
+updatePlaceholder();
 
-
+//Looper igennem data 
 data.forEach((item, i) => {
+  // ****************  TIDSBESTILLING ********************//  
   const timeSlotElement = document.createElement("div");
   timeSlotElement.classList.add('timeSlot');
 
@@ -246,7 +248,63 @@ data.forEach((item, i) => {
   const bookBtn = document.createElement("button");
   bookBtn.textContent = "Book";
 
-// When an appointment is added remove the placeholder text
+//appendchild bruges til at tilføje nye html elementer (child nodes) til parent elementet 
+timeSlotElement.appendChild(textElement);
+timeSlotElement.appendChild(bookBtn);
+
+if (i !== data.length - 1) {
+  timeSlotElement.classList.add('timeSlotWithBorder');
+}
+if (i === data.length - 1) {
+  timeSlotElement.classList.add('paddingTop');
+}
+
+timeSlotsContainer.appendChild(timeSlotElement);
+
+
+  // booking button for available appointment 
+  bookBtn.addEventListener("click", function() {
+    console.log("Go to confirmation page");
+
+// ALERT CONFIRMATION
+const title = "Bekræft venligst";
+const message = "Er du sikker på at du vil booke denne tid?";
+const timeElement = document.querySelector('.time');
+const specialistElement = document.querySelector('.specialist');
+timeElement.textContent = `Tidspunkt: ${item.timeSlot}`;
+specialistElement.textContent = `Behandler: ${item.specialist}`;
+const cancelText = "Nej";
+const ctaText = "Ja";
+
+// when alert is responded to with yes the booked appointment is added to my appointments
+const onPress = function() {
+// hides the modal
+  modal.style.display = 'none';
+ 
+ // Flytter den valgte tid og behandler til "Mine bookinger" container
+      const selectedAppointment = document.createElement("div");
+      selectedAppointment.classList.add("appointment_list");
+      selectedAppointment.textContent = textElement.textContent;
+      myAppointmentsContainer.appendChild(selectedAppointment);
+
+    //hide available appointments conatiainer
+    document.getElementById("appointment_container").classList.add("hidden");
+ 
+  updatePlaceholder();
+  
+
+};
+
+// ****************  BEKRÆFTELSE ********************//  
+
+
+// kalder funktionen 
+showAlert(title, message, cancelText, ctaText, onPress);
+
+ });
+});
+
+  // When an appointment is added remove the placeholder text
 function updatePlaceholder() {
   const appointments = myAppointmentsContainer.querySelectorAll(".appointment_list");
   if (appointments.length === 0) {
@@ -255,41 +313,34 @@ function updatePlaceholder() {
     placeholderNoAppointments.style.display = "none"; // Hide placeholder text
   }
 }
-
-  // booking button for available appointment 
-  bookBtn.addEventListener("click", function() {
-    console.log("Go to confirmation page");
-
-      // Flytter den valgte tid og behandler til "Mine bookinger" container
-      const selectedAppointment = document.createElement("div");
-      selectedAppointment.classList.add("appointment_list");
-      selectedAppointment.textContent = textElement.textContent;
-      myAppointmentsContainer.appendChild(selectedAppointment);
-
-
-    //hide available appointments conatiainer
-    document.getElementById("appointment_container").classList.add("hidden");
-
-    updatePlaceholder();
-  });
-
-
-  timeSlotElement.appendChild(textElement);
-  timeSlotElement.appendChild(bookBtn);
-  myAppointmentsContainer.appendChild(placeholderNoAppointments);
-
-  if (i !== data.length - 1) {
-    timeSlotElement.classList.add('timeSlotWithBorder');
-
-
-  }
-  if (i === data.length - 1) {
-    timeSlotElement.classList.add('paddingTop');
-  }
-
-  timeSlotsContainer.appendChild(timeSlotElement);
-});
+ 
 }
 
 ListOfTimeSlots();
 
+//ALERT
+const modal = document.getElementById('modal');
+const cancelButton = document.getElementById('cancel-button');
+const actionButton = document.getElementById('action-button');
+const modalTitle = document.getElementById('modal-title');
+const modalMessage = document.getElementById('modal-message');
+
+// Function to show the modal
+function showAlert(title, message, cancelText, ctaText, onPress) {
+  modalTitle.textContent = title;
+  modalMessage.textContent = message;
+  cancelButton.textContent = cancelText;
+  actionButton.textContent = ctaText;
+  actionButton.onclick = onPress;
+  modal.style.display = 'block';
+}
+
+// Close the modal when the close button is clicked
+document.querySelector('.close').addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Close the modal when the cancel button is clicked
+cancelButton.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
