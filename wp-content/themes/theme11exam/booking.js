@@ -35,7 +35,20 @@ document.getElementById("year").innerHTML = createYear;
 
 let calendar = document.getElementById("calendar");
 
-let months = ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
+let months = [
+  "Januar",
+  "Februar",
+  "Marts",
+  "April",
+  "Maj",
+  "Juni",
+  "Juli",
+  "August",
+  "September",
+  "Oktober",
+  "November",
+  "December",
+];
 let days = ["Man", "Tir", "Ons", "Tor", "Fre", "Lør", "Søn"];
 
 $dataHead = "<tr>";
@@ -90,9 +103,18 @@ function showCalendar(month, year) {
         cell.setAttribute("data-year", year);
         cell.setAttribute("data-month_name", months[month]);
         cell.className = "date-picker";
-        cell.innerHTML = "<span class='circle' style='background-color: " + (days[j] === "Lør" || days[j] === "Søn" ? "darkgray" : "") + "'>" + date + "</span>";
+        cell.innerHTML =
+          "<span class='circle' style='background-color: " +
+          (days[j] === "Lør" || days[j] === "Søn" ? "darkgray" : "") +
+          "'>" +
+          date +
+          "</span>";
 
-        if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+        if (
+          date === today.getDate() &&
+          year === today.getFullYear() &&
+          month === today.getMonth()
+        ) {
           cell.className = "date-picker selected";
           /*  if (cell.className === "date-picker selected") cell.innerHTML = "<span class='circle' style='background-color: transparent" + "'>" + date + "</span>"; */
         }
@@ -113,11 +135,18 @@ function showCalendar(month, year) {
             cell.classList.remove("selected");
           });
           // Remove 'hidden' class from appointment container so appointments show
-          document.getElementById("appointment_container").classList.remove("hidden");
+          document
+            .getElementById("appointment_container")
+            .classList.remove("hidden");
 
           // Adds styling to selected date
           this.classList.add("selected");
-          if (cell.className === "date-picker selected") cell.innerHTML = "<span class='circle' style='background-color: transparent" + "'>" + date + "</span>";
+          if (cell.className === "date-picker selected")
+            cell.innerHTML =
+              "<span class='circle' style='background-color: transparent" +
+              "'>" +
+              date +
+              "</span>";
 
           console.log("date clicked", clickedDate);
         });
@@ -167,7 +196,11 @@ function createEventTooltip(date, month, year) {
 function getEventsOnDate(date, month, year) {
   return events.filter(function (event) {
     let eventDate = new Date(event.date);
-    return eventDate.getDate() === date && eventDate.getMonth() === month && eventDate.getFullYear() === year;
+    return (
+      eventDate.getDate() === date &&
+      eventDate.getMonth() === month &&
+      eventDate.getFullYear() === year
+    );
   });
 }
 
@@ -228,13 +261,15 @@ function ListOfTimeSlots() {
 
   // ************************ MINE BOOKINGER MODAL *********************//
   const timeSlotsContainer = document.getElementById("timeSlotsContainer");
-  const myAppointmentsContainer = document.getElementById("my_appointments");
-
+  const confirmedAppointmentsContainer = document.getElementById(
+    "confirmation_container"
+  );
   // placeholder when no appointments
   const placeholderNoAppointments = document.createElement("p");
   placeholderNoAppointments.classList.add("placeholder_text");
-  placeholderNoAppointments.textContent = "Du har endnu ingen bookinger. Vælg en dato og en ledig tid. Når du har booked en tid, vil dine tider blive vist her.";
-  myAppointmentsContainer.appendChild(placeholderNoAppointments);
+  placeholderNoAppointments.textContent =
+    "Du har endnu ingen bookinger. Vælg en dato og en ledig tid. Når du har booked en tid, vil dine tider blive vist her.";
+  confirmedAppointmentsContainer.appendChild(placeholderNoAppointments);
   updatePlaceholder();
 
   //Looper igennem data
@@ -285,10 +320,12 @@ function ListOfTimeSlots() {
         const selectedAppointment = document.createElement("div");
         selectedAppointment.classList.add("appointment_list");
         selectedAppointment.textContent = textElement.textContent;
-        myAppointmentsContainer.appendChild(selectedAppointment);
+        confirmedAppointmentsContainer.appendChild(selectedAppointment);
 
         //hide available appointments conatiainer
-        document.getElementById("appointment_container").classList.add("hidden");
+        document
+          .getElementById("appointment_container")
+          .classList.add("hidden");
 
         updatePlaceholder();
       };
@@ -299,31 +336,29 @@ function ListOfTimeSlots() {
   });
 
   // ****************  BEKRÆFTELSE MODAL********************//
-  const confirmationContainer = document.getElementById("confirmation_container");
+  const confirmationContainer = document.getElementById(
+    "confirmation_container"
+  );
   const bookingDetails = document.createElement("p");
   const cancelation = document.createElement("p");
   cancelation.classList.add("cancelation_text");
-  cancelation.textContent = "Afbud skal ske senest 48 timer før din tidsbestilling. Du kan enten ringe til os på 86 16 43 93 eller slette din tidsbestilling under Mine bookinger. ";
+  cancelation.textContent =
+    "Afbud skal ske senest 48 timer før din tidsbestilling. Du kan enten ringe til os på 86 16 43 93 eller slette din tidsbestilling under Mine bookinger. ";
   /*  bookingDetails.textContent = `Tak for din booking. Du har bestilt tid til d. ${item.timeSlot} kl XX hos ${item.specialist}`; */
   const homepageBtn = document.createElement("button");
   homepageBtn.textContent = "Til forsiden";
-  const myBookings = document.createElement("button");
-  myBookings.textContent = "Mine bookinger";
 
   confirmationContainer.appendChild(bookingDetails);
   confirmationContainer.appendChild(cancelation);
-  confirmationContainer.appendChild(myBookings);
 
   homepageBtn.addEventListener("click", function () {
     console.log("Go to frontpage");
   });
-  myBookings.addEventListener("click", function () {
-    console.log("My_appointments modal");
-  });
 
   // When an appointment is added remove the placeholder text
   function updatePlaceholder() {
-    const appointments = myAppointmentsContainer.querySelectorAll(".appointment_list");
+    const appointments =
+      confirmedAppointmentsContainer.querySelectorAll(".appointment_list");
     if (appointments.length === 0) {
       placeholderNoAppointments.style.display = "block"; // Show placeholder text
     } else {
