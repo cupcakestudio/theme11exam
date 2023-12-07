@@ -187,3 +187,47 @@ function daysInMonth(iMonth, iYear) {
 
 // Call the showCalendar function initially to display the calendar
 showCalendar(currentMonth, currentYear);
+
+// function getFormData(form) {
+//   const bookingFormData = {};
+
+//   // Use for...of loop to iterate over form elements
+//   for (const element of form.elements) {
+//     if (element.id) {
+//       if (element.tagName === "SELECT") {
+//         // For select elements, get all selected options' values
+//         const selectedOptions = [...element.selectedOptions].map(
+//           (option) => option.value
+//         );
+//         bookingFormData[element.id] = selectedOptions;
+//       } else if (element.tagName === "TEXTAREA") {
+//         // For textarea elements, get the text content
+//         bookingFormData[element.id] = element.value;
+//       } else {
+//         // For other input elements, use the value property
+//         bookingFormData[element.id] = element.value;
+//       }
+//     }
+//   }
+
+//   return bookingFormData;
+// }
+// const booking = document.querySelector("#booking-skema");
+
+// const bookingFormDataValues = getFormData(booking);
+// console.log(booking, bookingFormDataValues);
+// booking.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   console.log(bookingFormDataValues);
+// });
+// // console.log("Form input values:", bookingFormData);
+// // const payload = {
+// //   Date: bookingFormDataValues.date,
+// //   PatientName: `${
+// //     bookingFormDataValues.fornavn + " " + bookingFormDataValues.efternavn
+// //   }`,
+// //   Email: bookingFormDataValues.email,
+// //   Behandler: bookingFormDataValues.behandler,
+// //   Behandlingstype: bookingFormDataValues.behandlingstype,
+// //   Kommentar: `${bookingFormDataValues.kommentar}`,
+// // };

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booking</title>
     <link href="custombooking.css" rel="stylesheet" />
-    <script src="./scripts/validation.js"></script>
+
   </head>
 
         <body>
@@ -16,7 +16,7 @@
           <div id="booking-form">
             <h1>Booking form</h1>
 
-            <form id="booking-skema" onsubmit="return validateForm()">
+            <form id="booking-skema" >
               <!-- action=/confirm.html -->
               <div class="wrapper" id="booking-form-wrapper">
             
@@ -45,9 +45,9 @@
               <label for="efternavn">Efternavn</label>
               <input id="efternavn" name="Efternavn" aria-placeholder="F.eks: Dahl" placeholder="F.eks: Dahl" type="text" required/>
               <label for="email">Email</label>
-              <input id="email" name="Email" aria-placeholder="F.eks: jdahlXXX@gmail.com" placeholder="F.eks: jdahlXXX@gmail.com" type="email" required pattern="/^[^s@]+@[^s@]+.[^s@]+$/"/>
+              <input id="email" name="Email" aria-placeholder="F.eks: jdahlXXX@gmail.com" placeholder="F.eks: jdahlXXX@gmail.com" type="email" required />
            <!-- tror form skal udvides, -->
-            <!-- vil vi have en måde for eksisternde brugere at logge ind på? så behøver man ikke at udfylde personlige oplysninger igen...? -->
+            <!-- vil vi have en måde for eksisternde brugere at logge ind på? så behøver man ikke at udfylde personlige oplysninger igen...? pattern="[A-Za-z]+.*\d@[A-Za-z]+\.[A-Za-z]+" -->
             <button><a href="#Booking-calendar-view">Vælg tidspunkt</a></button> </div>
 
               </div>
@@ -56,15 +56,15 @@
             
             <div id="Booking-calendar-view">
               <div class="button-container-calendar">
-                <button id="previous" onclick="previous()">‹</button>
+                <button type="button" onclick="previous()">‹</button>
                 <h3 id="monthAndYear"></h3>
-                <button id="next" onclick="next()">›</button>
+                <button type="button" onclick="next()">›</button>
               </div>
               <div class="datebutton-container-calendar">
                 <div>
                   <!-- Today's date button -->
                   <label for="month">Gå til: </label>
-                  <button id="goToToday" onclick="goToToday()">
+                  <button type="button" onclick="goToToday()">
                     Dags dato
                   </button>
                 </div>
@@ -106,6 +106,7 @@
           </div>
           <!-- Include the JavaScript file for the calendar functionality -->
           <script src="./scripts/booking.js"></script>
+          <script src="./scripts/validation.js"></script>
           <!-- <script src="api/confirm-booking.js"></script> -->
         </body>
       
