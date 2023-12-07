@@ -312,6 +312,7 @@ function ListOfTimeSlots() {
       const ctaText = "Ja";
 
       // when alert is responded to with yes the booked appointment is added to my appointments
+      console.log(data, bookedTimeSlots);
       const onPress = function () {
         // hides the modal
         modal.style.display = "none";
@@ -322,6 +323,11 @@ function ListOfTimeSlots() {
         selectedAppointment.textContent = textElement.textContent;
         confirmedAppointmentsContainer.appendChild(selectedAppointment);
 
+        //move the appointment from data to bookedTimeSlots array
+
+        data.splice(i, 1);
+        bookedTimeSlots.push(item);
+        console.log(data, bookedTimeSlots);
         //hide available appointments conatiainer
         document
           .getElementById("appointment_container")
@@ -335,7 +341,7 @@ function ListOfTimeSlots() {
     });
   });
 
-  // ****************  BEKRÆFTELSE MODAL********************//
+  // ****************  BEKRÆFTELSE SEKTION********************//
   const confirmationContainer = document.getElementById(
     "confirmation_container"
   );
