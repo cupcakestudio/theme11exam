@@ -338,11 +338,15 @@ function ListOfTimeSlots() {
         console.log(appointmentTimeSlot, bookedTimeSlots);
 
         deleteselectedAppointment.addEventListener("click", function () {
-          handleDeleteAppointment(
-            item,
-            selectedAppointment,
-            deleteselectedAppointment
-          );
+          /* MODAL FOR AT BEKRÆFTE SLETNING AF BOOKING*/
+
+          showDeleteConfirmationModal(function () {
+            handleDeleteAppointment(
+              item,
+              selectedAppointment,
+              deleteselectedAppointment
+            );
+          });
         });
         //hide available appointments conatiainer
         document
@@ -389,6 +393,23 @@ function ListOfTimeSlots() {
   }
 
   /****************delete confirmed booked*************************/
+  function showDeleteConfirmationModal(onConfirm) {
+    const modal = document.getElementById("modal");
+    const cancelButton = document.getElementById("cancel-button");
+    const actionButton = document.getElementById("action-button");
+    const modalTitle = document.getElementById("modal-title");
+    const modalMessage = document.getElementById("modal-message");
+
+    // Customize modal for deletion confirmation
+    modalTitle.textContent = "Bekræft sletning";
+    modalMessage.textContent = "Er du sikker på, at du vil slette denne tid?";
+    cancelButton.textContent = "Annuller";
+    actionButton.textContent = "Ja";
+
+    modal.style.display = "block";
+
+    actionButton.onclick = onConfirm;
+  }
 
   function handleDeleteAppointment(
     appointment,
@@ -408,6 +429,7 @@ function ListOfTimeSlots() {
     confirmedAppointmentsContainer.removeChild(deleteselectedAppointment);
     console.log(bookedTimeSlots, appointmentTimeSlot);
     updatePlaceholder();
+    modal.style.display = "none";
   }
 }
 
