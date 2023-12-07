@@ -224,6 +224,8 @@ function ListOfTimeSlots() {
     },
   ];
 
+  const bookedTimeSlots = {};
+
   // ************************ MINE BOOKINGER MODAL *********************//
   const timeSlotsContainer = document.getElementById("timeSlotsContainer");
   const myAppointmentsContainer = document.getElementById("my_appointments");
