@@ -15,6 +15,8 @@ CALENDER: S
 - Modal 3: Mine bookinger (oversigt) + knap til at afbestille booking + knap tilbage til forside
 - Alert/toast: Er du sikker på at du vil booke denne tid? (ja/nej) - DONE
 - Skal slette tiderne fra "ledige tider" når en booking er blevet bekræftet
+- lave item.timeSlot som global variabel
+- Login modal inden mine bookinger modal vises
 
 DATABASE
 
