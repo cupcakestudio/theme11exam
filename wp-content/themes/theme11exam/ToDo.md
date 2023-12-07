@@ -14,6 +14,7 @@ CALENDER: S
 - Modal 2: Bekræftelse på tidsbestilling + knap til "mine bookinger" + knap tilbage til forside
 - Modal 3: Mine bookinger (oversigt) + knap til at afbestille booking + knap tilbage til forside
 - Alert/toast: Er du sikker på at du vil booke denne tid? (ja/nej) - DONE
+- Skal slette tiderne fra "ledige tider" når en booking er blevet bekræftet
 
 DATABASE
 
