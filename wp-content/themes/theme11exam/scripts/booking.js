@@ -222,7 +222,7 @@ showCalendar(currentMonth, currentYear);
 //data for available time slots Appointments
 function ListOfTimeSlots() {
   //indsæt den rigtige data
-  const data = [
+  const appointmentTimeSlot = [
     {
       timeSlot: "kl. 8",
       specialist: "Barbara",
@@ -272,8 +272,8 @@ function ListOfTimeSlots() {
   confirmedAppointmentsContainer.appendChild(placeholderNoAppointments);
   updatePlaceholder();
 
-  //Looper igennem data
-  data.forEach((item, i) => {
+  //Looper igennem appointmentTimeSlot
+  appointmentTimeSlot.forEach((item, i) => {
     // **************** MODAL TIDSBESTILLING ********************//
     const timeSlotElement = document.createElement("div");
     timeSlotElement.classList.add("timeSlot");
@@ -288,10 +288,10 @@ function ListOfTimeSlots() {
     timeSlotElement.appendChild(textElement);
     timeSlotElement.appendChild(bookBtn);
 
-    if (i !== data.length - 1) {
+    if (i !== appointmentTimeSlot.length - 1) {
       timeSlotElement.classList.add("timeSlotWithBorder");
     }
-    if (i === data.length - 1) {
+    if (i === appointmentTimeSlot.length - 1) {
       timeSlotElement.classList.add("paddingTop");
     }
 
@@ -312,22 +312,38 @@ function ListOfTimeSlots() {
       const ctaText = "Ja";
 
       // when alert is responded to with yes the booked appointment is added to my appointments
-      console.log(data, bookedTimeSlots);
+      console.log(appointmentTimeSlot, bookedTimeSlots);
       const onPress = function () {
         // hides the modal
         modal.style.display = "none";
 
-        // Flytter den valgte tid og behandler til "Mine bookinger" container
+        // Flytter den valgte tid og behandler til "bekræftede bookinger" container
         const selectedAppointment = document.createElement("div");
         selectedAppointment.classList.add("appointment_list");
         selectedAppointment.textContent = textElement.textContent;
         confirmedAppointmentsContainer.appendChild(selectedAppointment);
 
-        //move the appointment from data to bookedTimeSlots array
+        const deleteselectedAppointment = document.createElement("button");
 
-        data.splice(i, 1);
+        deleteselectedAppointment.classList.add("deleteAppointment");
+
+        deleteselectedAppointment.textContent = "Slet";
+
+        confirmedAppointmentsContainer.appendChild(deleteselectedAppointment);
+
+        //move the appointment from appointmentTimeSlot to bookedTimeSlots array
+
+        appointmentTimeSlot.splice(i, 1);
         bookedTimeSlots.push(item);
-        console.log(data, bookedTimeSlots);
+        console.log(appointmentTimeSlot, bookedTimeSlots);
+
+        deleteselectedAppointment.addEventListener("click", function () {
+          handleDeleteAppointment(
+            item,
+            selectedAppointment,
+            deleteselectedAppointment
+          );
+        });
         //hide available appointments conatiainer
         document
           .getElementById("appointment_container")
@@ -347,7 +363,7 @@ function ListOfTimeSlots() {
   );
   const bookingDetails = document.createElement("p");
   const cancelation = document.createElement("p");
-  cancelation.classList.add("cancelation_text");
+  // cancelation.classList.add("cancelation_text");
   cancelation.textContent =
     "Afbud skal ske senest 48 timer før din tidsbestilling. Du kan enten ringe til os på 86 16 43 93 eller slette din tidsbestilling under Mine bookinger. ";
   /*  bookingDetails.textContent = `Tak for din booking. Du har bestilt tid til d. ${item.timeSlot} kl XX hos ${item.specialist}`; */
@@ -370,6 +386,28 @@ function ListOfTimeSlots() {
     } else {
       placeholderNoAppointments.style.display = "none"; // Hide placeholder text
     }
+  }
+
+  /****************delete confirmed booked*************************/
+
+  function handleDeleteAppointment(
+    appointment,
+    selectedAppointment,
+    deleteselectedAppointment
+  ) {
+    const index = bookedTimeSlots.indexOf(appointment);
+    // Remove the appointment from the bookedAppointments array
+    if (index !== -1) {
+      bookedTimeSlots.splice(index, 1);
+    }
+    //push it back into appointmentTimeSlot arr
+    appointmentTimeSlot.push(appointment);
+
+    // Remove the selectedAppointment and deleteSelectedAppointment elements from the DOM
+    confirmedAppointmentsContainer.removeChild(selectedAppointment);
+    confirmedAppointmentsContainer.removeChild(deleteselectedAppointment);
+    console.log(bookedTimeSlots, appointmentTimeSlot);
+    updatePlaceholder();
   }
 }
 
