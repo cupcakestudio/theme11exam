@@ -1,0 +1,142 @@
+/*---------------- GENERAL -------------------*/
+* {
+  all: unset;
+  display: revert;
+  cursor: revert;
+  box-sizing: border-box;
+  gap: 3rem;
+}
+img {
+  height: auto;
+  width: 100%;
+  background-size: cover;
+  background-position: 100%, 100%;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* -----------------HEADER --------------------*/
+.links {
+  display: flex;
+  align-items: flex-start;
+  justify-content: right;
+  list-style: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: rgb(5, 5, 123);
+}
+
+.links > li > a{color: rgb(5, 26, 99)}
+
+.links > li > a:hover { text-decoration: underline dashed 1px  }
+
+#home {
+  width: 150px;
+}
+header {
+  text-align: left;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(5, 26, 99);
+}
+#navbar {
+  display: none;
+}
+
+/* ---------------------------------BURGERMENU---------------------------------- */
+#navbar {
+  display: none;
+}
+.mobile-nav {
+  display: grid;
+  justify-content: right;
+  margin-top: 40px;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .desktop-nav {
+    display: block;
+    margin-top: 20px;
+  }
+  .mobile-nav {
+    display: none;
+  }
+}
+
+.burgermenu {
+  margin-left: auto;
+}
+.fa .fa-bars {
+  font-size: 25px;
+}
+/* ----------------- FOOTER -------------------*/
+@media (min-width: 600px) {
+  .grid_fot {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1rem;
+    gap: 20px;
+  }
+}
+
+footer {
+  text-align: center;
+  font-family: "DM Serif Text", serif;
+  font-size: 80%;
+  padding-block: 2rem;
+  font-size: 17px;
+  border-top: 1px solid;
+  background-color: rgb(5, 26, 99);
+}
+
+footer > .grid_fot > .col_1 > h3, footer > .grid_fot > .col_2 > h3, h3, footer > .grid_fot > .col_3 > h3   {
+  font-size: 20px;
+  font-family: "DM Serif Text", serif;
+  margin: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+footer > p, .exstra_text {
+  color: white;
+  margin-top: 0.5rem; /* Adjusted margin for better spacing */
+  font-family: "Raleway", sans-serif;
+}
+
+.maerke {
+  width: 50%; /* Adjusted width for better responsiveness */
+  max-width: 120px; /* Set a max-width to avoid taking up too much space */
+  height: auto; /* Maintain aspect ratio */
+}
+.exstra_text {
+  margin: 2rem;
+}
+
+/* ----------------- IKONER I FOOTER -------------------*/
+
+.col_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally in col_1 */
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  margin-top: -30px;
+  margin-right: 30px;
+  color: white;
+}
+
+.contact-info i {
+  font-size: 1.5rem; /* Adjusted icon size */
+}
