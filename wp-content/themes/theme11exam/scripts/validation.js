@@ -47,29 +47,45 @@ function getFormfromData(form) {
 // const bookingFormDataValues = getFormfromData(booking);
 
 // // console.log("Form input values:", bookingFormData);
-// function connecttoDB(formData) {
-//   const payload = {
-//     Date: formData.date,
-//     PatientName: `${formData.fornavn + " " + formData.efternavn}`,
-//     Email: formData.email,
-//     Behandler: formData.behandler,
-//     Behandlingstype: formData.behandlingstype,
-//     Kommentar: `${formData.kommentar}`,
-//   };
+function connecttoDB(formData) {
+  const payload = {
+    Date: formData.date,
+    PatientName: `${formData.fornavn + " " + formData.efternavn}`,
+    Email: formData.email,
+    Behandler: formData.behandler,
+    Behandlingstype: formData.behandlingstype,
+    Kommentar: `${formData.kommentar}`,
+  };
 
-//   /* Fetcher fra api "confirm-booking" */
-//   fetch("/api/confirm-booking", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(payload),
-//   })
-//     .then((res) => res.json())
-//     .then((data) => console.log(data, "hej"));
+  /* Fetcher fra api "confirm-booking" */
+  fetch("./api/confirm-booking", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      console.log("API response:", data);
+      // Add any further logic based on the API response
+    })
+    .catch((error) => {
+      if (error.name === "SyntaxError") {
+        console.error("Invalid JSON received from the server.");
+      } else {
+        console.error("API error:", error.message);
+      }
+      // Handle errors, show user-friendly messages, etc.
+    });
 
-//   console.log("THIS IS PAYLOAD", payload);
-// }
+  console.log("THIS IS PAYLOAD", payload);
+}
 
 // const booking = document.getElementById("booking-skema");
 
