@@ -7,4 +7,4 @@
  * @package Hestia
  * @since Hestia 1.0
  */
-include("./parts/header.html")
+include("./parts/header.html")?>
