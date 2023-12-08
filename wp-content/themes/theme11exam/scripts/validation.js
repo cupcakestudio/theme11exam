@@ -29,9 +29,7 @@ function getFormfromData(form) {
         // For select elements, get all selected options' values
         // it creates an array (selectedOptions) containing all selected option values.
         // This array is then assigned to the corresponding bookingFormData property.
-        const selectedOptions = [...element.selectedOptions].map(
-          (option) => option.value
-        );
+        const selectedOptions = [...element.selectedOptions].map((option) => option.value);
         bookingFormData[element.id] = selectedOptions;
       } else if (element.tagName === "textarea") {
         bookingFormData[element.id] = element.value;
@@ -46,15 +44,15 @@ function getFormfromData(form) {
 
 // const bookingFormDataValues = getFormfromData(booking);
 
-// // console.log("Form input values:", bookingFormData);
+// // console.log("Form input values:", bookingFormData); /* timeslot mangler */
 function connecttoDB(formData) {
   const payload = {
-    Date: formData.date,
-    PatientName: `${formData.fornavn + " " + formData.efternavn}`,
-    Email: formData.email,
-    Behandler: formData.behandler,
-    Behandlingstype: formData.behandlingstype,
-    Kommentar: `${formData.kommentar}`,
+    date: formData.date,
+    behandler: formData.behandler,
+    patientName: `${formData.fornavn + " " + formData.efternavn}`,
+    treatmentType: formData.behandlingstype,
+    email: formData.email,
+    kommentar: `${formData.kommentar}`,
   };
 
   /* Fetcher fra api "confirm-booking" */
