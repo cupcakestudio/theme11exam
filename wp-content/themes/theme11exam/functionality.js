@@ -11,24 +11,21 @@ const paginationLimit = 3; // show 3 items at one page - How many slides are sho
 const pageLength = Math.ceil(allSlides.length / paginationLimit); // Number of pages available.
 
 //handle next button pagination
+
 nextButton.addEventListener("click", () => {
   setCurrentPage(currentPage + 1);
-  console.log("next", currentPage);
-  //set page  to first page
-  if (currentPage >= paginationLimit) {
-    currentPage = 1;
-    console.log(currentPage);
+  //if current page is larger than pagelength +1 because we also want to be able to see pagelength's content
+  if (currentPage >= pageLength + 1) {
+    setCurrentPage(1); // Reset to the first page
   }
 });
+// //handle prev button pagination
 
-//handle prev button pagination
 prevButton.addEventListener("click", () => {
-  setCurrentPage(currentPage - 1);
-  console.log("prev", currentPage);
-  //set page  to last page
-  if (currentPage <= paginationLimit - 2) {
-    currentPage = paginationLimit;
-    console.log(currentPage);
+  if (currentPage <= 1) {
+    setCurrentPage(pageLength); //Reset to last page
+  } else {
+    setCurrentPage(currentPage - 1);
   }
 });
 
@@ -77,7 +74,17 @@ window.addEventListener("load", () => {
   getPaginationNumbers();
   setCurrentPage(1);
   console.log("this is current page", currentPage);
-});
 
-// makes pagination dots clickable
-/* document.querySelectorAll(""); */
+  // makes pagination dots clickable
+
+  document.querySelectorAll(".pagination_dot").forEach((button) => {
+    const pageIndex = Number(button.getAttribute("page_index"));
+
+    if (pageIndex) {
+      button.addEventListener("click", () => {
+        setCurrentPage(pageIndex);
+        console.log("this is current page", currentPage);
+      });
+    }
+  });
+});
