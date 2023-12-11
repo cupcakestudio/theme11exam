@@ -1,4 +1,3 @@
-
 /*---------------- GENERAL -------------------*/
 * {
   all: unset;
@@ -104,8 +103,8 @@ footer {
 
 footer > .grid_fot > .col_1 > h3,
 footer > .grid_fot > .col_2 > h3,
-h3,
-footer > .grid_fot > .col_3 > h3  {
+
+footer > .grid_fot > .col_3 > h3 {
   font-size: 20px;
   font-family: "DM Serif Text", serif;
   margin: 15px;
@@ -113,18 +112,19 @@ footer > .grid_fot > .col_3 > h3  {
   font-weight: bold;
 }
 
-footer > p,
-.exstra_text {
-p {
+footer p {
   color: white;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; /* Adjusted margin for better spacing */
   font-family: "Raleway", sans-serif;
 }
 
 .maerke {
-  width: 50%;
-  max-width: 120px;
-  height: auto;
+  width: 50%; /* Adjusted width for better responsiveness */
+  max-width: 120px; /* Set a max-width to avoid taking up too much space */
+  height: auto; /* Maintain aspect ratio */
+}
+.exstra_text {
+  margin: 2rem;
 }
 
 /* ----------------- IKONER I FOOTER -------------------*/
@@ -158,5 +158,4 @@ p {
   .contact-info i {
     font-size: 1rem;
   }
-}
 }
