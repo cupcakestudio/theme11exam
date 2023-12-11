@@ -37,7 +37,7 @@
         </div>
         <div class="col_3">
           <h3>Nyhåb's fodklinik</h3>
-          <img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/Bomaerke_Fodterapeuter_pos_cmyk.pdf" alt="logo" class="maerke" />
+          <img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/bomaerke.png" alt="logo" class="maerke" />
         </div>
       </div>
     </footer>
