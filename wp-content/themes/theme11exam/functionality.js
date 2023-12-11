@@ -46,14 +46,33 @@ function getPaginationNumbers() {
     appendPagination(i);
   }
 }
+// set pagination dots active
+function handleActiveDot() {
+  document.querySelectorAll(".pagination_dot").forEach((button) => {
+    const pageIndex = Number(button.getAttribute("page_index"));
 
+    if (pageIndex) {
+      button.addEventListener("click", () => {
+        const activeDot = document.querySelector("active");
+        activeDot.classList.add("avtive_dot");
+        // Remove 'active' class from all dots
+        document.querySelectorAll(".pagination_dot").forEach((dot) => {
+          dot.classList.remove("active");
+        });
+        console.log("active dot");
+        // Set 'active' class to the clicked dot
+        button.classList.add("active");
+      });
+    }
+  });
+}
 //when a button is pressed, change the content in carousel, with the list item
 //set the curent page
 function setCurrentPage(pageNumber) {
   currentPage = pageNumber;
 
   //handle when a user clicks on an arbitrary page-button (en cirkel i bunden)
-
+  handleActiveDot();
   // Defines a range for how many slides is shown at a time
 
   const prevRange = (pageNumber - 1) * paginationLimit;
@@ -76,7 +95,6 @@ window.addEventListener("load", () => {
   console.log("this is current page", currentPage);
 
   // makes pagination dots clickable
-
   document.querySelectorAll(".pagination_dot").forEach((button) => {
     const pageIndex = Number(button.getAttribute("page_index"));
 
