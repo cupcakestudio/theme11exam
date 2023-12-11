@@ -49,23 +49,19 @@ function getPaginationNumbers() {
 // set pagination dots active
 function handleActiveDot() {
   document.querySelectorAll(".pagination_dot").forEach((button) => {
+    button.classList.remove("active");
+    button.classList.remove("active_dot");
     const pageIndex = Number(button.getAttribute("page_index"));
 
-    if (pageIndex) {
-      button.addEventListener("click", () => {
-        const activeDot = document.querySelector("active");
-        activeDot.classList.add("avtive_dot");
-        // Remove 'active' class from all dots
-        document.querySelectorAll(".pagination_dot").forEach((dot) => {
-          dot.classList.remove("active");
-        });
-        console.log("active dot");
-        // Set 'active' class to the clicked dot
-        button.classList.add("active");
-      });
+    if (pageIndex === currentPage) {
+      button.classList.add("active");
+      button.classList.add("active_dot");
+
+      console.log("active dot");
     }
   });
 }
+
 //when a button is pressed, change the content in carousel, with the list item
 //set the curent page
 function setCurrentPage(pageNumber) {
