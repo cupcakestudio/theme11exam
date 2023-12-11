@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Behandlinger</title>
+    <title>Behandling</title>
   </head>
   <body>
     <section class="carousel_container">
@@ -15,15 +15,15 @@
       <!-- <section class="flipCards_container"> -->
 
       <ul class="slide_container" id="slides_pagination">
-        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling1.png"/> behandling 1 <section class="kort_tekst"></section><button>Læs mere</button></li>
-        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling2.png"/> behandling 2 <section class="kort_tekst"></section><button>Læs mere </button></li>
-        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling3.png"/> behandling 3 <section class="kort_tekst"></section><button>Læs mere </button></li>
-        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling1.png"/> behandling 4 <section class="kort_tekst"></section><button>Læs mere </button></li>
-        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling2.png"/> behandling 5 <section class="kort_tekst"></section><button>Læs mere </button></li>
-        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling3.png"/> behandling 6 <section class="kort_tekst"></section><button>Læs mere </button></li>
-        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling1.png"/> behandling 7 <section class="kort_tekst"></section><button>Læs mere </button></li>
-        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling2.png"/> behandling 8 <section class="kort_tekst"></section><button>Læs mere </button></li>
-        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling3.png"/> behandling 9 <section class="kort_tekst"></section><button>Læs mere </button></li>
+        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling1.png"/>  <section class="overlay_text">behandling 1</section><button class="overlay_btn">Læs mere </button></li>
+        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling2.png"/>  <section class="overlay_text">behandling 2</section><button class="overlay_btn">Læs mere </button></li>
+        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling3.png"/>  <section class="overlay_text">behandling 3</section><button class="overlay_btn">Læs mere </button></li>
+        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling1.png"/>  <section class="overlay_text">behandling 4</section><button class="overlay_btn">Læs mere </button></li>
+        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling2.png"/>  <section class="overlay_text">behandling 5</section><button class="overlay_btn">Læs mere </button></li>
+        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling3.png"/>  <section class="overlay_text">behandling 6</section><button class="overlay_btn">Læs mere </button></li>
+        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling1.png"/>  <section class="overlay_text">behandling 7</section><button class="overlay_btn">Læs mere </button></li>
+        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling2.png"/>  <section class="overlay_text">behandling 8</section><button class="overlay_btn">Læs mere </button></li>
+        <li class="slide"><img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling3.png"/>  <section class="overlay_text">behandling 9</section><button class="overlay_btn">Læs mere </button></li>
       </ul>
       <!-- </section> -->
       <nav class="pagination">
@@ -32,9 +32,23 @@
     </section>
   </body>
   <style>
+* {
+  display: revert;
+  cursor: revert;
+  box-sizing: border-box;
+}
+
     body {
       margin: 40px;
     }
+
+    img {
+  max-width: 100%;
+}
+
+button{
+  cursor: pointer;
+}
 
     .carousel_container {
       display: grid;
@@ -46,6 +60,7 @@
     .slide_container {
       list-style: none;
       display: flex;
+      position: relative;
     }
     #button_container {
       position: absolute;
@@ -62,10 +77,11 @@
       gap: 1em;
     }
     .slide img{
-      border: 1px solid black;
-      width: 250px;
-      height: 350px;
-      list-style-type: none;
+    list-style-type: none;
+    max-width: 250px;
+    height: 350px;
+    display: block;
+   
     }
 
     .hidden {
@@ -80,6 +96,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+     cursor: pointer;
     }
 
   .pagination_dot{
@@ -96,7 +113,26 @@
 
   .avtive_dot{
    background-color: #051a63; 
+   color: #051a63;
   }
+
+  section .overlay_text{
+      position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: #fff; 
+  padding: 10px 20px; 
+  font-size: 20px; 
+  text-align: center;
+  }
+
+  .overlay_btn{
+ position: absolute;
+  top: 60%; 
+  left: 50%; 
+  }
+
   </style>
 
   <script src="functionality.js"></script>
