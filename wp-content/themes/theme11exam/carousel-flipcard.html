@@ -26,9 +26,11 @@
   </div>
   <!-- backside -->
   <div class="back">
-    <section class="overlay_text ">Pris 1</section>
-    <p class="">text</p>
-    <button class="overlay_btn">Tilbage </button>
+    <section class="info">Mere info:</section>
+    <p class="text_back">Pris: 350 Kr.</p>
+    <p class="text2_back">Behandlingsvarighed: 2 timer & 30 min.</p>
+     <button class="arrow_backside"> &#8249 </button>
+     <button class="book_backside">Book </button>
   </div>
 </li>
 
@@ -41,9 +43,11 @@
   </div>
   <!-- backside -->
   <div class="back">
-    <section class="overlay_text ">Pris 2</section>
-    <p class="">text</p>
-    <button class="overlay_btn">Tilbage </button>
+    <section class="info">Mere info:</section>
+    <p class="text_back">Pris: 350 Kr.</p>
+    <p class="text2_back">Behandlingsvarighed: 2 timer & 30 min.</p>
+     <button class="arrow_backside"> &#8249 </button>
+     <button class="book_backside">Book </button>
   </div>
 </li>
 
@@ -56,9 +60,11 @@
   </div>
   <!-- backside -->
   <div class="back">
-    <section class="overlay_text ">Pris 3</section>
-    <p class="">text</p>
-    <button class="overlay_btn">Tilbage </button>
+    <section class="info">Mere info:</section>
+    <p class="text_back">Pris: 350 Kr.</p>
+    <p class="text2_back">Behandlingsvarighed: 2 timer & 30 min.</p>
+     <button class="arrow_backside"> &#8249 </button>
+     <button class="book_backside">Book </button>
   </div>
 </li>
 
@@ -70,10 +76,12 @@
     <button class="overlay_btn">Læs mere </button>
   </div>
   <!-- backside -->
-  <div class="back">
-    <section class="overlay_text ">Pris 4</section>
-    <p class="">text</p>
-    <button class="overlay_btn">Tilbage </button>
+   <div class="back">
+    <section class="info">Mere info:</section>
+    <p class="text_back">Pris: 350 Kr.</p>
+    <p class="text2_back">Behandlingsvarighed: 2 timer & 30 min.</p>
+     <button class="arrow_backside"> &#8249 </button>
+     <button class="book_backside">Book </button>
   </div>
 </li>
 
@@ -85,10 +93,12 @@
     <button class="overlay_btn">Læs mere </button>
   </div>
   <!-- backside -->
-  <div class="back">
-    <section class="overlay_text ">Pris 5</section>
-    <p class="">text</p>
-    <button class="overlay_btn">Tilbage </button>
+ <div class="back">
+    <section class="info">Mere info:</section>
+    <p class="text_back">Pris: 350 Kr.</p>
+    <p class="text2_back">Behandlingsvarighed: 2 timer & 30 min.</p>
+     <button class="arrow_backside"> &#8249 </button>
+     <button class="book_backside">Book </button>
   </div>
 </li>
 
@@ -101,9 +111,11 @@
   </div>
   <!-- backside -->
   <div class="back">
-    <section class="overlay_text ">Pris 6</section>
-    <p class="">text</p>
-    <button class="overlay_btn">Tilbage </button>
+    <section class="info">Mere info:</section>
+    <p class="text_back">Pris: 350 Kr.</p>
+    <p class="text2_back">Behandlingsvarighed: 2 timer & 30 min.</p>
+     <button class="arrow_backside"> &#8249 </button>
+     <button class="book_backside">Book </button>
   </div>
 </li>
 
@@ -115,10 +127,12 @@
     <button class="overlay_btn">Læs mere </button>
   </div>
   <!-- backside -->
-  <div class="back">
-    <section class="overlay_text ">Pris 7</section>
-    <p class="">text</p>
-    <button class="overlay_btn">Tilbage </button>
+   <div class="back">
+    <section class="info">Mere info:</section>
+    <p class="text_back">Pris: 350 Kr.</p>
+    <p class="text2_back">Behandlingsvarighed: 2 timer & 30 min.</p>
+     <button class="arrow_backside"> &#8249 </button>
+     <button class="book_backside">Book </button>
   </div>
 </li>
 
@@ -131,9 +145,11 @@
   </div>
   <!-- backside -->
   <div class="back">
-    <section class="overlay_text ">Pris 8</section>
-    <p class="">text</p>
-    <button class="overlay_btn">Tilbage </button>
+    <section class="info">Mere info:</section>
+    <p class="text_back">Pris: 350 Kr.</p>
+    <p class="text2_back">Behandlingsvarighed: 2 timer & 30 min.</p>
+     <button class="arrow_backside"> &#8249 </button>
+     <button class="book_backside">Book </button>
   </div>
 </li>
 
@@ -285,10 +301,14 @@ button{
 transform: rotateY(180deg);
 -webkit-transform: rotateY(180deg);
 }
+.slide.flipped img {
+ filter: brightness(0.1);
+}
 
 .slide .back {
 transform: rotateY(180deg);
 display:none;
+
 }
 
 .flipped .front {
@@ -319,6 +339,46 @@ p {
   bottom: 30%;
   color: white;
 }
+  /* Backside of flipcard */
+.arrow_backside {
+position: absolute;
+border: none;
+color: white;
+display: flex;
+justify-content: center;
+bottom: 19rem;
+left: 25px;
+width: 1px;
+}
+.text_back {
+  position: absolute;
+  left: 2rem;
+  bottom: 10rem;
+  color: white;
+}
+.text2_back {
+  position: absolute;
+  left: 2rem;
+  bottom: 7rem;
+  color: white;
+}
+.info {
+position: absolute;
+color: #fff; 
+font-size: 20px; 
+font-weight: bold;
+bottom: 17rem;
+left: 6rem;
+}
+.book_backside {
+  position: absolute;
+  background-color: #051a63;
+  border: none;
+  color: #ffffff;
+  bottom: 65px;
+  left: 6rem;
+}
+
   </style>
 
   <script src="functionality.js" defer></script>
