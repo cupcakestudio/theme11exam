@@ -1,17 +1,31 @@
 window.addEventListener("DOMContentLoaded", () => flipAnimationBtn());
 const cards = document.querySelectorAll(".slide");
 
-function flipCard() {
-  this.classList.toggle("flip");
-  console.log("toggle flip");
+function flipCard(card) {
+  card.classList.toggle("flipped");
+  console.log("toggle flipped");
+  // if ("flipped") {
+  //   // const hiddenContent = card.querySelector(".back");
+
+  //   // hiddenContent.style.display =
+  //   //   hiddenContent.style.display === "none" ? "none" : "flex";
+
+  // }
+  // if (!"flipped") {
+  //   console.log("back to front");
+  // }
 }
 
 function flipAnimationBtn() {
-  const cardsBtn = document.querySelectorAll(".overlay_btn");
-  console.log(cardsBtn);
-  cardsBtn.forEach((button) =>
+  const slideBtn = document.querySelectorAll(".overlay_btn");
+  console.log(slideBtn);
+  slideBtn.forEach((button) =>
     button.addEventListener("click", () => {
-      flipCard();
+      console.log("clicked");
+      const slide = button.closest(".slide");
+      if (slide) {
+        flipCard(slide);
+      }
     })
   );
 }
