@@ -7,7 +7,7 @@ const pagination_container = document.getElementsByClassName("pagination");
 const slides_pagination = document.getElementById("slides_pagination");
 const pagination_numbers = document.getElementById("pagination-numbers");
 let currentPage = 1; //current page
-const paginationLimit = 3; // show 3 items at one page - How many slides are shown/visible on on the current page
+let paginationLimit = 3; // show 3 items at one page - How many slides are shown/visible on on the current page
 const pageLength = Math.ceil(allSlides.length / paginationLimit); // Number of pages available.
 
 //handle next button pagination
@@ -38,6 +38,11 @@ function appendPagination(index) {
   pageNumber.setAttribute("aria_label", "page" + index); // sets an attribute to the html element
 
   pagination_numbers.appendChild(pageNumber);
+
+  // Add click event listener to pagination dot
+  pageNumber.addEventListener("click", () => {
+    setCurrentPage(index);
+  });
 }
 
 // get pagination number trough a forloop function
@@ -62,7 +67,6 @@ function handleActiveDot() {
   });
 }
 
-//when a button is pressed, change the content in carousel, with the list item
 //set the curent page
 function setCurrentPage(pageNumber) {
   currentPage = pageNumber;
@@ -85,10 +89,53 @@ function setCurrentPage(pageNumber) {
 }
 
 // waits for the page to load the content before making functionality available
+// makes pagination dots clickable
+/* window.addEventListener("load", () => {
+  getPaginationNumbers();
+  setCurrentPage(1);
+  console.log("this is current page", currentPage);
+  
+  document.querySelectorAll(".pagination_dot").forEach((button) => {
+    const pageIndex = Number(button.getAttribute("page_index"));
+
+    if (pageIndex) {
+      button.addEventListener("click", () => {
+        setCurrentPage(pageIndex);
+        console.log("this is current page", currentPage);
+      });
+    }
+  });
+}); */
 window.addEventListener("load", () => {
   getPaginationNumbers();
   setCurrentPage(1);
   console.log("this is current page", currentPage);
+
+  // Check screen size on window resize
+  window.addEventListener("resize", () => {
+    handleWindowSize();
+    console.log("checks screen size");
+  });
+
+  handleWindowSize();
+
+  function handleWindowSize() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 700) {
+      // Mobile or smaller screens: Show one slide at a time
+      paginationLimit = 1; // Change the number of slides shown
+    } else {
+      // Larger screens: Show multiple slides
+      paginationLimit = 3; // Change the number of slides shown
+    }
+    resetCarousel();
+  }
+
+  function resetCarousel() {
+    pagination_numbers.innerHTML = ""; // Clear existing pagination dots
+    getPaginationNumbers();
+    setCurrentPage(1);
+  }
 
   // makes pagination dots clickable
   document.querySelectorAll(".pagination_dot").forEach((button) => {

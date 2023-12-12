@@ -4,7 +4,6 @@
   display: revert;
   cursor: revert;
   box-sizing: border-box;
-  gap: 3rem;
 }
 img {
   height: auto;
@@ -28,9 +27,13 @@ main {
   color: rgb(5, 5, 123);
 }
 
-.links > li > a{color: rgb(5, 26, 99)}
+.links > li > a {
+  color: rgb(5, 26, 99);
+}
 
-.links > li > a:hover { text-decoration: underline dashed 1px  }
+.links > li > a:hover {
+  text-decoration: underline dashed 1px;
+}
 
 #home {
   width: 150px;
@@ -98,7 +101,10 @@ footer {
   background-color: rgb(5, 26, 99);
 }
 
-footer > .grid_fot > .col_1 > h3, footer > .grid_fot > .col_2 > h3, h3, footer > .grid_fot > .col_3 > h3   {
+footer > .grid_fot > .col_1 > h3,
+footer > .grid_fot > .col_2 > h3,
+h3,
+footer > .grid_fot > .col_3 > h3 {
   font-size: 20px;
   font-family: "DM Serif Text", serif;
   margin: 15px;
@@ -106,7 +112,8 @@ footer > .grid_fot > .col_1 > h3, footer > .grid_fot > .col_2 > h3, h3, footer >
   font-weight: bold;
 }
 
-footer > p, .exstra_text {
+footer > p,
+.exstra_text {
   color: white;
   margin-top: 0.5rem; /* Adjusted margin for better spacing */
   font-family: "Raleway", sans-serif;
