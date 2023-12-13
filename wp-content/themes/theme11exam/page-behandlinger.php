@@ -1,0 +1,579 @@
+<?php
+
+get_header();
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Behandling</title>
+  </head>
+  <main>
+    <section class="carousel_container">
+      <section id="button_container">
+        <button class="arrow_btn" id="prev">&#8249;</button>
+        <button class="arrow_btn" id="next">&#8250;</button>
+      </section>
+
+      <!-- <section class="flipCards_container"> -->
+
+      <!-- FRONT  -->
+      <div class="slide_container" id="slides_container">
+        <div class="slide">
+          <img
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling1.png"
+          />
+          <div class="front">
+            <section class="overlay_text">behandling af vorter</section>
+            <p class="text">
+              Vorter behandles med fjernelse eller medicinsk behandling afhængig
+              af type og placering. 
+            </p>
+            <button class="overlay_btn">Læs mere</button>
+          </div>
+          <!-- backside -->
+          <div class="back">
+            <section class="info">Mere info</section>
+            <p class="text_back"><strong>Pris:</strong> <br />250 Kr.</p>
+            <p class="text2_back">
+              <strong>Behandlingsvarighed:</strong> <br />1 time
+            </p>
+            <button class="arrow_backside">&#8249;</button>
+            <div class="container">
+              <a
+                href="https://thlstudios.dk/kea/theme11exam-wp/booking/"
+                class="book_backside"
+                >Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling2.png"
+          />
+          <div class="front">
+            <section class="overlay_text">behandling af ligtorne</section>
+            <p class="text">
+              Ligtorne behandles ved fjernelse eller lindring af hård hud.
+              Metoder inkluderer brug af lindrende fek.s. puder. 
+            </p>
+            <button class="overlay_btn">Læs mere</button>
+          </div>
+          <!-- backside -->
+          <div class="back">
+            <section class="info">Mere info</section>
+            <p class="text_back"><strong>Pris:</strong> <br />350 Kr.</p>
+            <p class="text2_back">
+              <strong>Behandlingsvarighed:</strong> <br />1 time.
+            </p>
+            <button class="arrow_backside">&#8249;</button>
+            <div class="container">
+              <a
+                href="https://thlstudios.dk/kea/theme11exam-wp/booking/"
+                class="book_backside"
+                >Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling3.png"
+          />
+          <div class="front">
+            <section class="overlay_text">behandling af hård hud</section>
+            <p class="text">
+              Hård hud behandles ved fjernelse eller lindring af fortykket hud.
+               
+            </p>
+            <button class="overlay_btn">Læs mere</button>
+          </div>
+          <!-- backside -->
+          <div class="back">
+            <section class="info">Mere info</section>
+            <p class="text_back"><strong>Pris:</strong> <br />350 Kr.</p>
+            <p class="text2_back">
+              <strong>Behandlingsvarighed:</strong> <br />1 time.
+            </p>
+            <button class="arrow_backside">&#8249;</button>
+            <div class="container">
+              <a
+                href="https://thlstudios.dk/kea/theme11exam-wp/booking/"
+                class="book_backside"
+                >Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/feet1.png"
+          />
+          <div class="front">
+            <section class="overlay_text">
+              behandling i forbindelse med diabetis
+            </section>
+            <p class="text">
+              Behandling i forbindelse med diabetes fokuserer på kontrol af
+              blodsukker, livsstilsændringer og medicinsk styring. 
+            </p>
+            <button class="overlay_btn">Læs mere</button>
+          </div>
+          <!-- backside -->
+          <div class="back">
+            <section class="info">Mere info</section>
+            <p class="text_back"><strong>Pris:</strong> <br />350 Kr.</p>
+            <p class="text2_back">
+              <strong>Behandlingsvarighed:</strong> <br />1 time.
+            </p>
+            <button class="arrow_backside">&#8249;</button>
+            <div class="container">
+              <a
+                href="https://thlstudios.dk/kea/theme11exam-wp/booking/"
+                class="book_backside"
+                >Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/hand2-scaled.jpg"
+          />
+          <div class="front">
+            <section class="overlay_text">
+              behandling af nedgroede negle
+            </section>
+            <p class="text">
+              Skal give indtrykket af høj faglighed, seriøsitet og troværdighed.
+              Gerne enkel og klassisk i udtrykket. 
+            </p>
+            <button class="overlay_btn">Læs mere</button>
+          </div>
+          <!-- backside -->
+          <div class="back">
+            <section class="info">Mere info</section>
+            <p class="text_back"><strong>Pris:</strong> <br />350 Kr.</p>
+            <p class="text2_back">
+              <strong>Behandlingsvarighed:</strong> <br />1 time.
+            </p>
+            <button class="arrow_backside">&#8249;</button>
+            <div class="container">
+              <a
+                href="https://thlstudios.dk/kea/theme11exam-wp/booking/"
+                class="book_backside"
+                >Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/chair3.png"
+          />
+          <div class="front">
+            <section class="overlay_text">
+              behandling med lægehenvisning
+            </section>
+            <p class="text">
+              Behandling med lægehenvisning indebærer medicinsk intervention
+              baseret på en læges anbefaling. 
+            </p>
+            <button class="overlay_btn">Læs mere</button>
+          </div>
+          <!-- backside -->
+          <div class="back">
+            <section class="info">Mere info</section>
+            <p class="text_back"><strong>Pris:</strong> <br />350 Kr.</p>
+            <p class="text2_back">
+              <strong>Behandlingsvarighed:</strong> <br />1 time.
+            </p>
+            <button class="arrow_backside">&#8249;</button>
+            <div class="container">
+              <a
+                href="https://thlstudios.dk/kea/theme11exam-wp/booking/"
+                class="book_backside"
+                >Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/foot4-scaled.jpg"
+          />
+          <div class="front">
+            <section class="overlay_text">behandling af åreknuder</section>
+            <p class="text">
+              Behandling af åreknuder involverer metoder som kompression,
+              laserterapi eller kirurgisk indgreb. 
+            </p>
+            <button class="overlay_btn">Læs mere</button>
+          </div>
+          <!-- backside -->
+          <div class="back">
+            <section class="info">Mere info</section>
+            <p class="text_back"><strong>Pris:</strong> <br />350 Kr.</p>
+            <p class="text2_back">
+              <strong>Behandlingsvarighed:</strong> <br />1 time.
+            </p>
+            <button class="arrow_backside">&#8249;</button>
+            <div class="container">
+              <a
+                href="https://thlstudios.dk/kea/theme11exam-wp/booking/"
+                class="book_backside"
+                >Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/foot5-scaled.jpg"
+          />
+          <div class="front">
+            <section class="overlay_text">
+              behandling af nedsunket forfod
+            </section>
+            <p class="text">
+              Behandling af nedsunken forfod indebærer ofte brug af ortopædiske
+              indlægssåler.  
+            </p>
+            <button class="overlay_btn">Læs mere</button>
+          </div>
+          <!-- backside -->
+          <div class="back">
+            <section class="info">Mere info</section>
+            <p class="text_back"><strong>Pris:</strong> <br />350 Kr.</p>
+            <p class="text2_back">
+              <strong>Behandlingsvarighed:</strong> <br />1 time.
+            </p>
+            <button class="arrow_backside">&#8249;</button>
+            <div class="container">
+              <a
+                href="https://thlstudios.dk/kea/theme11exam-wp/booking/"
+                class="book_backside"
+                >Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/hand6-scaled.jpg"
+          />
+          <div class="front">
+            <section class="overlay_text">behandling af knyster</section>
+            <p class="text">
+              Behandling af knyster involverer metoder som ændringer i fodtøj,
+              anvendelse af puder.
+            </p>
+            <button class="overlay_btn">Læs mere</button>
+          </div>
+          <!-- backside -->
+          <div class="back">
+            <section class="info">Mere info</section>
+            <p class="text_back"><strong>Pris:</strong> <br />350 Kr.</p>
+            <p class="text2_back">
+              <strong>Behandlingsvarighed:</strong> <br />1 time.
+            </p>
+            <button class="arrow_backside">&#8249;</button>
+            <div class="container">
+              <a
+                href="https://thlstudios.dk/kea/theme11exam-wp/booking/"
+                class="book_backside"
+                >Book</a
+              >
+            </div>
+          </div>
+        </div>
+</div>
+      <!-- </section> -->
+      <nav class="pagination">
+        <div id="pagination-numbers"></div>
+      </nav>
+    </section>
+  </main>
+  <style>
+    * {
+      display: revert;
+      cursor: revert;
+      box-sizing: border-box;
+    }
+
+    main {
+      margin: 40px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #051a63; /* Blue background color */
+      border: none;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 5px; /* Rounded edges */
+      cursor: pointer; /* Show pointer cursor on hover */
+    }
+
+    .carousel_container {
+      display: grid;
+      grid-template-columns: auto;
+      justify-content: center;
+      place-items: center;
+    }
+
+    .slide_container {
+      list-style: none;
+      display: flex;
+      position: relative;
+      left: -19px;
+    }
+
+    #button_container {
+      position: absolute;
+      display: flex;
+      width: 95%;
+      z-index: 40;
+      justify-content: space-between;
+      border: none;
+    }
+
+    .flipCards_container * {
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+    }
+    .slide img {
+      list-style-type: none;
+      max-width: 250px;
+      height: 350px;
+      display: block;
+      filter: brightness(0.4);
+      margin-inline: 1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .arrow_btn {
+      background: #051a63;
+      border: none;
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .pagination_dot {
+      background: #d9d9d9;
+      color: inherit;
+      border: 1px solid #d9d9d9;
+      padding-inline: 8px;
+      margin: 4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      color: #d9d9d9;
+      font-size: 2px;
+    }
+
+    .active_dot {
+      background-color: #051a63;
+      color: #051a63;
+    }
+
+    /*********** Flip card styling **********/
+
+    /* Animation */
+    .slide {
+      -webkit-transition: transform 0.6s;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .slide.front,
+    .slide.back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide.front {
+      height: 100%;
+      transform: rotateX(0deg);
+      -webkit-transform: rotateX(0deg);
+    }
+
+    .slide.flipped {
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+    }
+    .slide.flipped img {
+      filter: brightness(0.1);
+    }
+
+    .slide .back {
+      transform: rotateY(180deg);
+      display: none;
+    }
+
+    .flipped .front {
+      display: none;
+    }
+
+    .flipped .back {
+      display: flex;
+    }
+    section .overlay_text {
+      position: absolute;
+      top: 10%;
+      color: #fff;
+      font-size: 20px;
+      padding-inline: 4rem;
+      font-weight: bold;
+    }
+
+    .overlay_btn {
+      position: absolute;
+      top: 75%;
+      margin-top: 3rem;
+      margin-left: 5rem;
+      background: #051a63;
+      border-radius: 10px;
+      color: #fbfaf9;
+      margin-top: 1rem;
+      font-family: "raleway";
+      font-size: 15px;
+      line-height: 1;
+      padding: 12px 24px;
+      transform: scale(1);
+    }
+    .overlay_btn:hover {
+      background: #fbfaf9;
+      color: #051a63;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #fbfaf9;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      margin-top: 1rem;
+      font-family: "raleway";
+      font-size: 15px;
+      line-height: 1;
+      padding: 12px 24px;
+      transition: all 0.2s ease;
+      transform: scale(0.8);
+    }
+
+    .text {
+      position: absolute;
+      margin: 2rem;
+      bottom: 30%;
+      color: white;
+      left: 5%;
+    }
+    /* Backside of flipcard */
+    .arrow_backside {
+      position: absolute;
+      border: none;
+      color: white;
+      display: flex;
+      justify-content: center;
+      bottom: 290px;
+      left: 15px;
+      font-size: 2rem;
+      background-color: transparent;
+    }
+    .text_back {
+      position: absolute;
+      left: 3rem;
+      bottom: 10rem;
+      color: white;
+    }
+    .text2_back {
+      position: absolute;
+      left: 3rem;
+      bottom: 15rem;
+      color: white;
+    }
+    .info {
+      position: absolute;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      bottom: 25rem;
+      left: 8rem;
+    }
+    /* --------Book button----------*/
+    .container {
+      position: relative;
+    }
+    .book_backside {
+      position: absolute;
+      top: -100px; /* Adjust the value based on your layout */
+      background: #051a63;
+      border-radius: 10px;
+      color: #fbfaf9;
+      margin-top: 1rem;
+      font-family: "raleway";
+      font-size: 15px;
+      line-height: 1;
+      padding: 12px 24px;
+      transform: scale(1);
+      text-decoration: none;
+    margin-left: -150%;
+    }
+
+    .book_backside:hover {
+      background: #fbfaf9;
+      color: #051a63;
+      border-radius: 10px;
+      border: 1px solid #fbfaf9;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      margin-top: 1rem;
+      font-family: "raleway";
+      font-size: 15px;
+      line-height: 1;
+      padding: 12px 24px;
+      transition: all 0.2s ease;
+      transform: scale(0.8);
+    }
+    @media screen and (min-width: 700px) {
+       
+   
+
+    .slide.flipped .back * {
+        position: absolute;
+        
+    }
+    
+    .slide.flipped .back  .info, .text_back, .text2_back {margin-left: 2rem; text-align: start;}
+    
+    
+    .slide.flipped .back .container {
+        left: 50rem;
+    }
+    }
+  </style>
+  </html>
+<?php
+get_footer();?>
