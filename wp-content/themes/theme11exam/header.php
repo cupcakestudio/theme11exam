@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css?family=DM+Serif+Text:400,700&display=swap"
     />
 	  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/customheaderfooter.css ">
-
+    
   
   </head>
 	
@@ -31,7 +31,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twentytwentyone' ); ?></a>
 	  
     <header>
-      <a href="/">
+      <a href="https://thlstudios.dk/kea/theme11exam-wp">
         <img src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/logo.png" alt="homeknap" id="home"
       /></a>
       <nav class="mobile-nav">
@@ -70,7 +70,7 @@
             >
           </li>
           <li>
-            <a href="https://thlstudios.dk/kea/theme11exam-wp/on-klinikken/"
+            <a href="https://thlstudios.dk/kea/theme11exam-wp/om-klinikken/"
               >Om os</a
             >
           </li>

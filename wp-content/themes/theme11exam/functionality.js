@@ -1,5 +1,5 @@
-const slide = document.getElementsByClassName("slide");
-const allSlides = document.querySelectorAll("li");
+// const slide = document.getElementsByClassName("slide");
+const allSlides = document.querySelectorAll(".slide");
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
@@ -91,8 +91,7 @@ function setCurrentPage(pageNumber) {
   });
   console.log("this is current page", currentPage);
 }
-
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   getPaginationNumbers();
   setCurrentPage(1);
   console.log("this is current page", currentPage);
@@ -107,7 +106,7 @@ window.addEventListener("load", () => {
 
   function resetCarousel() {
     pagination_numbers.innerHTML = ""; // Clear existing pagination dots
-    getPaginationNumbers();
+    // getPaginationNumbers();
     setCurrentPage(1);
 
     //update the pagelength based on the screensize, only if pageLength changes
@@ -143,3 +142,47 @@ window.addEventListener("load", () => {
     }
   });
 });
+
+//FLIPCARDS
+
+document.addEventListener("DOMContentLoaded", () => {
+  // const cards = document.querySelectorAll(".slide");
+
+  flipAnimationBtn();
+});
+function flipCard(card) {
+  card.classList.toggle("flipped");
+  console.log("toggle flipped");
+}
+
+function flipAnimationBtn() {
+  const slideBtn = document.querySelectorAll(".overlay_btn");
+  const back_arrows = document.querySelectorAll(".arrow_backside");
+
+  console.log(slideBtn);
+
+  slideBtn.forEach((button) =>
+    button.addEventListener("click", () => {
+      /* console.log("clicked"); */
+      const slide = button.closest(".slide");
+      if (slide) {
+        flipCard(slide);
+      }
+    })
+  );
+
+  //flip back
+  back_arrows.forEach((button) => {
+    button.addEventListener("click", () => {
+      console.log("flip back");
+      const slide = button.closest(".slide");
+      if (slide) {
+        flipCard(slide);
+      }
+    });
+  });
+}
+
+// function flipBack() {
+
+// }
