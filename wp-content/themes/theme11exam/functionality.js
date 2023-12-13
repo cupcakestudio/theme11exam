@@ -7,8 +7,8 @@ const pagination_container = document.getElementsByClassName("pagination");
 const slides_pagination = document.getElementById("slides_pagination");
 const pagination_numbers = document.getElementById("pagination-numbers");
 let currentPage = 1; //current page
-let paginationLimit = 3; // show 3 items at one page - How many slides are shown/visible on on the current page
-const pageLength = Math.ceil(allSlides.length / paginationLimit); // Number of pages available.
+let paginationLimit = 1; // show 3 items at one page - How many slides are shown/visible on on the current page
+let pageLength = Math.ceil(allSlides.length / paginationLimit); // Number of pages available.
 
 //handle next button pagination
 
@@ -19,7 +19,7 @@ nextButton.addEventListener("click", () => {
     setCurrentPage(1); // Reset to the first page
   }
 });
-// //handle prev button pagination
+//handle prev button pagination
 
 prevButton.addEventListener("click", () => {
   if (currentPage <= 1) {
@@ -47,7 +47,11 @@ function appendPagination(index) {
 
 // get pagination number trough a forloop function
 function getPaginationNumbers() {
-  for (let i = 1; i <= pageLength; i++) {
+  pagination_numbers.innerHTML = ""; // Clear existing pagination dots
+
+  const numberOfDots = Math.ceil(allSlides.length / paginationLimit);
+
+  for (let i = 1; i <= numberOfDots; i++) {
     appendPagination(i);
   }
 }
@@ -88,24 +92,6 @@ function setCurrentPage(pageNumber) {
   console.log("this is current page", currentPage);
 }
 
-// waits for the page to load the content before making functionality available
-// makes pagination dots clickable
-/* window.addEventListener("load", () => {
-  getPaginationNumbers();
-  setCurrentPage(1);
-  console.log("this is current page", currentPage);
-  
-  document.querySelectorAll(".pagination_dot").forEach((button) => {
-    const pageIndex = Number(button.getAttribute("page_index"));
-
-    if (pageIndex) {
-      button.addEventListener("click", () => {
-        setCurrentPage(pageIndex);
-        console.log("this is current page", currentPage);
-      });
-    }
-  });
-}); */
 window.addEventListener("load", () => {
   getPaginationNumbers();
   setCurrentPage(1);
@@ -119,6 +105,20 @@ window.addEventListener("load", () => {
 
   handleWindowSize();
 
+  function resetCarousel() {
+    pagination_numbers.innerHTML = ""; // Clear existing pagination dots
+    getPaginationNumbers();
+    setCurrentPage(1);
+
+    //update the pagelength based on the screensize, only if pageLength changes
+    const newPageLength = Math.ceil(allSlides.length / paginationLimit);
+    if (newPageLength !== pageLength) {
+      pageLength = newPageLength; // set pageLength to be new page length
+      pagination_numbers.innerHTML = ""; //reset the dots
+      getPaginationNumbers();
+    }
+  }
+
   function handleWindowSize() {
     const screenWidth = window.innerWidth;
     if (screenWidth <= 700) {
@@ -129,12 +129,6 @@ window.addEventListener("load", () => {
       paginationLimit = 3; // Change the number of slides shown
     }
     resetCarousel();
-  }
-
-  function resetCarousel() {
-    pagination_numbers.innerHTML = ""; // Clear existing pagination dots
-    getPaginationNumbers();
-    setCurrentPage(1);
   }
 
   // makes pagination dots clickable
