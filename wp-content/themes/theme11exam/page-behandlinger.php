@@ -16,16 +16,14 @@ get_header();
         <button class="arrow_btn" id="next">&#8250;</button>
       </section>
 
-      <!-- <section class="flipCards_container"> -->
-
-      <!-- FRONT  -->
+ 
       <div class="slide_container" id="slides_container">
         <div class="slide">
           <img
-            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling1.png"
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling1.webp"
           />
           <div class="front">
-            <section class="overlay_text">behandling af vorter</section>
+            <section class="overlay_text">Behandling af vorter</section>
             <p class="text">
               Vorter behandles med fjernelse eller medicinsk behandling afhængig
               af type og placering. 
@@ -52,10 +50,10 @@ get_header();
 
         <div class="slide">
           <img
-            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling2.png"
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling2.webp"
           />
           <div class="front">
-            <section class="overlay_text">behandling af ligtorne</section>
+            <section class="overlay_text">Behandling af ligtorne</section>
             <p class="text">
               Ligtorne behandles ved fjernelse eller lindring af hård hud.
               Metoder inkluderer brug af lindrende fek.s. puder. 
@@ -82,10 +80,10 @@ get_header();
 
         <div class="slide">
           <img
-            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling3.png"
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/behandling3.webp"
           />
           <div class="front">
-            <section class="overlay_text">behandling af hård hud</section>
+            <section class="overlay_text">Behandling af hård hud</section>
             <p class="text">
               Hård hud behandles ved fjernelse eller lindring af fortykket hud.
                
@@ -112,11 +110,11 @@ get_header();
 
         <div class="slide">
           <img
-            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/feet1.png"
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/feet1.webp"
           />
           <div class="front">
             <section class="overlay_text">
-              behandling i forbindelse med diabetis
+              Behandling i forbindelse med diabetis
             </section>
             <p class="text">
               Behandling i forbindelse med diabetes fokuserer på kontrol af
@@ -144,11 +142,11 @@ get_header();
 
         <div class="slide">
           <img
-            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/hand2-scaled.jpg"
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/hand2-scaled-1.webp"
           />
           <div class="front">
             <section class="overlay_text">
-              behandling af nedgroede negle
+              Behandling af nedgroede negle
             </section>
             <p class="text">
               Skal give indtrykket af høj faglighed, seriøsitet og troværdighed.
@@ -176,11 +174,11 @@ get_header();
 
         <div class="slide">
           <img
-            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/chair3.png"
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/chair3.webp"
           />
           <div class="front">
             <section class="overlay_text">
-              behandling med lægehenvisning
+              Behandling med lægehenvisning
             </section>
             <p class="text">
               Behandling med lægehenvisning indebærer medicinsk intervention
@@ -208,10 +206,10 @@ get_header();
 
         <div class="slide">
           <img
-            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/foot4-scaled.jpg"
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/foot4-scaled-1.webp"
           />
           <div class="front">
-            <section class="overlay_text">behandling af åreknuder</section>
+            <section class="overlay_text">Behandling af åreknuder</section>
             <p class="text">
               Behandling af åreknuder involverer metoder som kompression,
               laserterapi eller kirurgisk indgreb. 
@@ -238,11 +236,11 @@ get_header();
 
         <div class="slide">
           <img
-            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/foot5-scaled.jpg"
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/foot5-scaled-1.webp"
           />
           <div class="front">
             <section class="overlay_text">
-              behandling af nedsunket forfod
+              Behandling af nedsunket forfod
             </section>
             <p class="text">
               Behandling af nedsunken forfod indebærer ofte brug af ortopædiske
@@ -270,10 +268,10 @@ get_header();
 
         <div class="slide">
           <img
-            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/hand6-scaled.jpg"
+            src="https://thlstudios.dk/kea/theme11exam-wp/wp-content/uploads/2023/12/hand6-scaled-1.webp"
           />
           <div class="front">
-            <section class="overlay_text">behandling af knyster</section>
+            <section class="overlay_text">Behandling af knyster</section>
             <p class="text">
               Behandling af knyster involverer metoder som ændringer i fodtøj,
               anvendelse af puder.
@@ -309,10 +307,34 @@ get_header();
       display: revert;
       cursor: revert;
       box-sizing: border-box;
+          --e-global-color-primary: #FBFAF9;
+    --e-global-color-secondary: #383634;
+    --e-global-color-text: #383634;
+    --e-global-color-accent: #051A63;
+    --e-global-color-edf6d88: #E5E7E8;
+    --e-global-color-9a75e06: #F2F3F4;
+    --e-global-typography-primary-font-family: "DM Serif Text";
+    --e-global-typography-primary-font-size: 48px;
+    --e-global-typography-primary-font-weight: 400;
+    --e-global-typography-secondary-font-family: "DM Serif Text";
+    --e-global-typography-secondary-font-size: 34px;
+    --e-global-typography-secondary-font-weight: 400;
+    --e-global-typography-text-font-family: "Raleway";
+    --e-global-typography-text-font-size: 16px;
+    --e-global-typography-text-font-size-mobile: 14px;
+    --e-global-typography-text-font-weight: 400;
+    --e-global-typography-accent-font-family: "Raleway";
+    --e-global-typography-accent-font-size: 16px;
+    --e-global-typography-accent-font-weight: 400;
+    --e-global-typography-274de5d-font-family: "DM Serif Text";
+    --e-global-typography-274de5d-font-size: 26px;
+    --e-global-typography-274de5d-font-size-mobile: 20px;
     }
-
+    
+   
     main {
       margin: 40px;
+      background-color: var(--e-global-color-edf6d88);
     }
 
     img {
@@ -337,6 +359,7 @@ get_header();
     }
 
     .slide_container {
+      margin-top:2em;
       list-style: none;
       display: flex;
       position: relative;
@@ -429,7 +452,7 @@ get_header();
       -webkit-transform: rotateY(180deg);
     }
     .slide.flipped img {
-      filter: brightness(0.1);
+      filter: brightness(0.70);
     }
 
     .slide .back {
@@ -444,13 +467,14 @@ get_header();
     .flipped .back {
       display: flex;
     }
-    section .overlay_text {
+    section.overlay_text {
       position: absolute;
       top: 10%;
       color: #fff;
-      font-size: 20px;
       padding-inline: 4rem;
-      font-weight: bold;
+      font-family: var( --e-global-typography-274de5d-font-family ), serif;
+      font-weight: var(--e-global-typography-274de5d-font-weight); 
+      font-size: var(  --e-global-typography-274de5d-font-size-mobile)
     }
 
     .overlay_btn {
@@ -490,6 +514,9 @@ get_header();
       bottom: 30%;
       color: white;
       left: 5%;
+      font-size: var(--e-global-typography-text-font-size-mobile);
+      font-weight: var(--e-global-typography-secondary-font-weight);
+      font-family: var(--e-global-typography-text-font-family);
     }
     /* Backside of flipcard */
     .arrow_backside {
@@ -503,18 +530,20 @@ get_header();
       font-size: 2rem;
       background-color: transparent;
     }
-    .text_back {
+
+    .text_back, .text2_back {
       position: absolute;
       left: 3rem;
       bottom: 10rem;
       color: white;
+       font-size: var(--e-global-typography-text-font-size-mobile);
+      font-weight: var(--e-global-typography-secondary-font-weight);
+      font-family: var(--e-global-typography-text-font-family);
     }
     .text2_back {
-      position: absolute;
-      left: 3rem;
       bottom: 15rem;
-      color: white;
     }
+    
     .info {
       position: absolute;
       color: #fff;
@@ -559,8 +588,6 @@ get_header();
     }
     @media screen and (min-width: 700px) {
        
-   
-
     .slide.flipped .back * {
         position: absolute;
         
@@ -572,6 +599,27 @@ get_header();
     .slide.flipped .back .container {
         left: 50rem;
     }
+    .front > .overlay_btn {
+        top: 28rem;
+    }
+    section.overlay_text, .info{
+    
+    font-family: var( --e-global-typography-274de5d-font-family ), serif;
+    font-weight: var(--e-global-typography-274de5d-font-weight); 
+    font-size: var(    --e-global-typography-274de5d-font-size);
+   margin-bottom: 1em;
+  }
+  .front > .overlay_btn {
+      top: 28rem;
+  }
+  .text {
+   font-size: var(--e-global-typography-text-font-size);
+  top:8em;
+  }
+  .text_back, .text2_back {
+       font-size: var(--e-global-typography-text-font-size);
+  }
+  
     }
   </style>
   </html>
